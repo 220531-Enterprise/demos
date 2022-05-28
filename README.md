@@ -1,6 +1,6 @@
 # Welcome to 220531 Reston Java Enterprise!
 *This is the repository for the remote Java Enterprise Revature batch starting May 31st, 2022.
-Here you will find all of the notes from class aslong with study-guides, project guidelines, and more resources.*
+Here you will find all of the notes from training along with study-guides, project guidelines, and more resources.*
 
 ### Most Recent QC Guide can be found [here](https://github.com/220531-Enterprise/demos/blob/main/1-core-java/qc-questions.md) :star:
 > QC is important! It is meant to simulate the interview process.  Check out [this guide on how to do well](https://github.com/220531-Enterprise/demos/blob/main/interviews/how-to-do-well-in-qc.md). 
