@@ -1,7 +1,6 @@
 # Week 1: Java Fundamentals
 *You will use [**this study guide**](https://github.com/220531-Enterprise/demos/blob/main/1-core-java/qc-questions.md) to prepare for our first QC on Monday June 6th.*
 
-<br>
 
 ### Extra Resources
 - [JavaTPoint: Intro to Java](https://www.javatpoint.com/java-tutorial)
