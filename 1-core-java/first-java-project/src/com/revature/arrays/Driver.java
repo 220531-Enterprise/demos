@@ -45,6 +45,29 @@ public class Driver {
 		// how we print out the the 4th element
 		System.out.println(numbers[3]);
 		
+		// we are searching for the number 900...
+		// DS&A
+		
+		// Linear Time Complexity - O(n) 
+		// if we're looking for the value that happens to be at the END of the array, 
+		// it will take as many steps as there is input
+		for (int i=0; i<numbers.length; i++) {
+			
+			if (numbers[i] == 900) {
+				System.out.println("Found 900!");
+				break;
+			} else {
+				continue;
+			}
+		}
+		
+		String[] fruits = {"kiwi", "apple", "guava", "orange"};
+		
+		System.out.println(Arrays.toString(fruits));
+		Arrays.sort(fruits);
+		System.out.println(Arrays.toString(fruits));
+		
+		
 	}
 	
 	
