@@ -1,6 +1,7 @@
 package com.revature.pojos;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * 
@@ -38,11 +39,47 @@ public class Employee extends Person implements Serializable{
 
 	// Hashcode is a numeric representation of the properties of an object
 	
+
+
+
+	@Override
+	public String toString() {
+		return "Employee [dept=" + dept + "]";
+	}
+
+	
+
+	
+	
+	// This is the Java 7  version of the hashCode() and equals()
+	
+//	@Override
+//	public int hashCode() {
+//		final int prime = 31;
+//		int result = super.hashCode();
+//		result = prime * result + Objects.hash(dept);
+//		return result;
+//	}
+//
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (!super.equals(obj))
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Employee other = (Employee) obj;
+//		return Objects.equals(dept, other.dept);
+//	}
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((dept == null) ? 0 : dept.hashCode());
+		result = prime * result + Objects.hash(dept);
 		return result;
 	}
 
@@ -56,20 +93,7 @@ public class Employee extends Person implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Employee other = (Employee) obj;
-		if (dept == null) {
-			if (other.dept != null)
-				return false;
-		} else if (!dept.equals(other.dept))
-			return false;
-		return true;
-	}
-
-
-
-
-	@Override
-	public String toString() {
-		return "Employee [dept=" + dept + "]";
+		return Objects.equals(dept, other.dept);
 	}
 
 

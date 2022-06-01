@@ -8,6 +8,8 @@ package com.revature.pojos;
  */
 public abstract class Person { // ALL USER-DEFINED OBJECTS EXTEND FROM THE OBJECT CLASS
 	
+	public static int MAX_AGE = 115; // globally avialable at the class level (static)
+	
 	private String name;
 	private int age;
 	
