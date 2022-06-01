@@ -5,19 +5,18 @@ package com.revature;
  * in a file directory. We use packages to avoid name conflicts, and to write a
  * better maintainable code. Packages are divided into two categories:
  * 
- * + Built-in Packages (packages from the Java API) + User-defined Packages
- * (create your own packages)
+ * + Built-in Packages (packages from the Java API) 
+ * + User-defined Packages (create your own packages)
  */
 
 // This is a single line comment! The compiler won't pick up on it
 
 /*
- * This is a multi-line comment - great for documentation! ctrl + makes it
- * larger, ctrl - makes text smaller
+ * This is a multi-line comment - 
+ * great for documentation!
  */
 public class HelloWorld {
 
-	// main + ctrl + space, enter
 	/**
 	 * In any Java Program the main() method is the entry point from where the
 	 * compiler starts program execution.
@@ -75,21 +74,41 @@ public class HelloWorld {
 		
 		String word = "spongebob";
 		
-		// What is the maximum value of int?
+		// Everything above that we've defined are Java Literals, which are simply
+		// hard-coded fixed values that we assign to a variable.
+
+		/*
+		 * What are Wrapper Classes?
+		 * 
+		 * Wrapper class is the class name of the data type. Essentially it is the name
+		 * of the object when stored in the Heap.
+		 * 
+		 * Why do we use Wrapper classes?
+		 * 
+		 * Because data-structures within the Collections Framework Only work with
+		 * Objects.
+		 * 
+		 * What is an Object?
+		 * 
+		 * A Java Object is a self-contained component which consists of methods and
+		 * properties to make certain types of data useful. These methods/properties are
+		 * defined in a Class!
+		 */
 		
 		// Wrapper class 
-		Integer intObj1 = new Integer(20); // this creates (instantiates) a new object with the value of 20
-		Integer intObj2 = new Integer("20");
+		Integer intObj1 = new Integer(20); // this creates (instantiates) a new Integer object with the value of 20
+		Integer intObj2 = new Integer("20"); // this does the same as above, but creates a separate Integer Object
 		
-		Double dubObj = new Double(32.09);
+		// When we transform a primitive value to it's Wrapper Class, that's called AUTOBOXING
+		Double dubObj = new Double(32.09); // Here we're calling upon the Double class
 		
 		System.out.println("The maximum value of an int is " + Integer.MAX_VALUE); // static member (globally available)
 		
-		// object equality
+		// object equality - tests for the VALUE 
 		System.out.println("Are intObj1 and intObj2 equal in value? " + intObj1.equals(intObj2));
 		
-		// how do we test that they share the same address in memory?
-		System.out.println("Do intOb1 and intObj2 share the same address in memory? AKA are they the same obj? " + (intObj1 == intObj2));
+		// how do we test that they share the same address in memory? use the ==
+		System.out.println("Do intOb1 and intObj2 share the same address in memory? AKA are they the same obj? " + (intObj1 == intObj2)); // NO
 		
 		int x = (2 + 2);
 		int y = 4;

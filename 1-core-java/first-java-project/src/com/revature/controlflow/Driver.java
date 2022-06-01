@@ -49,7 +49,7 @@ public class Driver {
 		}
 		
 		// Switch Statement (another form of control flow asides from if/else statements
-		int monthNum = 7; // that's july
+		int monthNum = 7;
 		
 		switch(monthNum) {
 	
