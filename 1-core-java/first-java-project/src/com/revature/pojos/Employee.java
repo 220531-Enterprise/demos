@@ -3,18 +3,29 @@ package com.revature.pojos;
 import java.io.Serializable;
 
 /**
- * Employee is a Java Bean
  * 
- * -- all instance variables are private
- * -- it is serializable
- * -- it has override hashCode and equals() methods
+ * Inheritance in Java is the concept that allows classes to acquire proerties
+ * from other classes, like a son inherits properties father;
+ * 
+ * Abstraction - The process of hiding data that's not necessary to view.
+ * 
+ * We will make Employee Class a Java Bean
+ * A Java Bean is a type of design pattern that dictates the composure of a class
+ * 
+ * -- all instance variable are private 
+ * -- it is serializable 
+ * -- it has overridden hashCode and Equals
  * -- getters & setters
+ * 
+ * Serialization is the process of persisting an object from memory to a
+ * sequence of bits, like saving it to your disk.
+ * 
+ * WHat is the difference between  a Java Bean vs a POJO?
  */
 public class Employee extends Person implements Serializable{
 	 
-	  // this id defines the class that the serialized object comes from
+	 // this id defines the class that the serialized object comes from
 	private static final long serialVersionUID = -6645485878431697253L;
-	// serializable allows it to be compressed into a bit stream
 
 	private String dept;
 	
