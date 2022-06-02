@@ -12,7 +12,8 @@ public final class GarbageDriver {
 
 		// Even though Java i derived from C it was designed to improve
 		// upon C by implementing automatic memory management
-		// Garbage Collector (a Daemon thread) - non-deterministic
+		// Garbage Collector (a Daemon thread) - non-deterministic meaning you can't force it, 
+		// but encourage it instead with System.gc();
 
 		System.out.println("Instantiateing a garbage Driver Object");
 
@@ -24,10 +25,10 @@ public final class GarbageDriver {
 		GarbageDriver gd2 = new GarbageDriver();
 		gd2.someNum = 2;
 		
-		gd1 = gd2; // the object created on line 19 gets sent to the garbage collector
-		gd2 = null; // the object created on Line 24 gets sent to the collector!
+		gd1 = gd2; // the object created on line 19 gets sent to the garbage collector because it's now unreferenced
+		gd2 = null; // the object created on Line 24 gets sent to the collector! Because it's now unreferenced
 		
-		// WHEN IS AN OBJECT ELIGIBLE FOR GARBAGE COLLECTION 
+		// WHEN IS AN OBJECT ELIGIBLE FOR GARBAGE COLLECTION?? When it's no longer referenced
 		
 		// You can encourage the Garbage Collector remove unreferenced objects from the heap by calling the
 		// System.gc() method. Garbage Collection is non-deterministic meaning it can't be forced, but it
@@ -36,6 +37,7 @@ public final class GarbageDriver {
 		
 		for (;;) {
 			System.out.println("...");
+			// this is just a loop to repeat forever
 		}
 	}
 	
