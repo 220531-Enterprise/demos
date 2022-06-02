@@ -1,10 +1,13 @@
 package com.revature.serialization;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PetStore {
 	
@@ -28,9 +31,10 @@ public class PetStore {
 		
 		// java.io is input output package 
 		// Here the compiler senses a CHECKED exception and forces us to handle it
-		try {
+		
+		// try with resources automatically closes the resources you're trying to invoke some methods on
 			// (1)
-			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("files/pet.db"));
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("files/pet.db"))) {
 			
 			// (2)
 			oos.writeObject(this.getPetDB());
@@ -43,10 +47,19 @@ public class PetStore {
 			e.printStackTrace();
 		}
 
+		
 	}
 	
 	// deserialize method() 
-	
+	// read from a file and set the petStore object's Database equal to the objects stored in a file
+	@SuppressWarnings("unchecked")
+	public void deserialize() throws FileNotFoundException, IOException, ClassNotFoundException {
+			
+				ObjectInputStream ois = new ObjectInputStream(new FileInputStream("files/pet.db"));
+				
+				// set the petDB arraylist EQUAL TO the value of whatever this ois reads from the file 
+				this.setPetDB((ArrayList<Pet>) ois.readObject());
+		}
 
 	public ArrayList<Pet> getPetDB() {
 		return petDB;
