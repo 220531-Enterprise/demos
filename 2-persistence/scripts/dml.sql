@@ -54,16 +54,23 @@ UPDATE users SET last_name = 'Bingo' WHERE id = 2;
 -- Danny like
 -- Billy will post a message on Danny's wall, which Cathy and Billy like
 
+SELECT * FROM users ORDER BY id;
+
 INSERT INTO posts (author_id, wall_user_id, post_content)
-	VALUES (1, 2, 'Hey Billy its Abby!')
+	VALUES (1, 2, 'Hey Billy its Abby'),
+			(3, 3, 'MY NAME IS CATHY I AM HERE'),
+			(2, 4, 'Hey Danny its Billy');
 
+SELECT * FROM posts;
 
-
-
-
-
-
-
+INSERT INTO likes (user_id, post_id)
+	VALUES (4, 1),
+		   (1, 2),
+		   (4, 2),
+		   (3, 3),
+		   (2, 3);
+		  
+SELECT * FROM likes;
 
 
 
