@@ -115,10 +115,12 @@ There are 3 (technically 4) kinds:
 - Levels of Normalization
   0. 0 Normal Form: No normalization
   1. 1st Normal Form: All data must be atomic, and should have a unique identifier
+  
   2. 2nd Normal Form: Also in 1st plus no partial dependencies
-    - Which means all values must identified by a single column (no composite keys)
+    - Which means all values must identified by the **whole** of the composite key, not just one part of it.
+    
   3. 3rd Normal Form: Also in 2nd plus no transitive dependencies
-    - Which means no column is dependent on a column that is not the primary key
+    - Transitive dependency is when a column is dependent on a different column that isn't a primary key (but that column itself relies on the primary key). If a column is dependent on some information in the database, it must be dependent on a primary key.
 
 <br>
 
