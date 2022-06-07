@@ -1,4 +1,4 @@
-# SQL Notes
+# Week 2: SQL, RDBMS, & JDBC
 *The following are topics that you may be asked about in QC or a client interview*.
 
 SQL: Structured Query Language
