@@ -24,7 +24,7 @@ You should research and be able to answer the following questions at the end of 
 2.  Draw a simple ERD for modeling Students and Classes
     
 3.  What are the 5 sublanguages of SQL? Which commands correspond to them?
-    - *This DDL, DML, DCL, TCL, DQL and the commands included in each like `DROP`, `INSERT`, etc...*
+    - *DDL, DML, DCL, TCL, DQL and the commands included in each like `DROP`, `INSERT`, etc...*
     
 4.  What is the difference between DELETE, DROP, and TRUNCATE commands?
     
