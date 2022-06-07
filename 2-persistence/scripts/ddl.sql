@@ -68,10 +68,7 @@ CREATE TABLE IF NOT EXISTS likes (
 -- ERD: Entity Relationship Diagram: shows us the tables 
 -- in our schema
 
-
-
-
-
+SELECT * FROM users;
 
 
 
