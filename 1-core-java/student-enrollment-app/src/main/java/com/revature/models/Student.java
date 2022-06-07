@@ -14,7 +14,7 @@ public class Student {
 	private int gradeYear; // 1 - Freshman , 2 - sophomore, etc.
 	private String studentId; // this will be a concatenated value 
 	private List<Course> courses = new LinkedList<Course>();
-	private double tuitionBalance = 0; // every student starts with $0 tuition balance initializetiong
+	private double tuitionBalance = 0; // every student starts with $0 tuition balance (we're initializing)
 
 	// constructor
 	public Student(String firstName, String lastName, int gradeYear) {
@@ -39,39 +39,74 @@ public class Student {
 	
 	public void enroll() {
 		
-		// involve a scanner, so when the method is called, we're porm[pted to add the classes
+		// step 1. Create an empty arraylist of courses to add
+		List<Course> coursesToAdd = new LinkedList<Course>();
 		
-		// Step. 1 Create an empty LinkedList of courses to add
-		List<Course> coursesToAdd = new LinkedList<>();
-		
-		// 2. opn up a while loop and have the user click q to quit
+		// step 2. open up a while loop and have the user click q to quit
 		boolean isDone = false;
 		
-		while(!isDone) { // ! indicates opposite of true .. as long as isDone is FALSE
-			// 3prompt the user top enter a course name
-			System.out.println("Enter the name of a course to enroll in");
-			// 3a. capture that string 
-			String courseName = scan.next();
-			// if the course name is == q, quite from the loop
-			if (!courseName.equalsIgnoreCase("q")) {
-				
+		while (!isDone) { // as long as isDone == false
+			
+			// step 3. prompt the user to enter a course name
+			System.out.println("Enter the name of a course to enroll in:");
+			
+			// step 3a. capture that string in an String variable called name
+			String courseName = scan.next(); // we need to create a scanner in this class
+			
+			if (!courseName.equalsIgnoreCase("q")) { // if the user puts in an uppercase Q? equals ignore case can handle it
+					
+				// step 4. use that name to build a course Object
 				Course course = new Course(courseName);
-				courses.add(course);
 				
-				tuitionBalance += Course.COST_OF_COURSE; // increase by $600
+				// step 4a add it to the courses to add list
+				coursesToAdd.add(course);
 				
-				scan.nextLine();
-			} else {
-				System.out.println("===== quitting the program ======");
-				isDone = true; // break from the loop
+				// step 5. increase the Student's balance property by 600 per course
+				tuitionBalance += Course.COST_OF_COURSE; // tution balance is equal to tution balance + the static cost of course (600)
+				
+				scan.nextLine(); // this is necessary to repeat the loop
+				
+			} else { // else if they wrote "q"
+				
+				System.out.println("===== quitting program =====");
+				isDone = true;
 			}
 		
+			
 		}
 		
-		// adjust the student object's courseList
-		this.courses = coursesToAdd; // add it to the Student Object's course list
+		// step 6. set the student's course list equal to the course list that we create here
+		this.courses = coursesToAdd; // this means the courses list 
 		
-		System.out.println("ENROLLED IN: " + courses.toString());
+		// step 7. print it all out!
+		System.out.println("ENROLLED IN " + courses.toString());
+		
+	}
+	
+	// view balance
+	public void viewBalance() {
+		System.out.println("Your balance is equal to " + tuitionBalance);
+	}
+	
+	
+	// pay tution
+	public void payTuition() {
+		
+		viewBalance();
+		
+		// 1. prompt enter payment amount
+		System.out.println("Please enter a payament amount");
+		
+		// 2. capture the amount as a double
+		double payment = scan.nextDouble();
+		
+		// 3.  subtract the amount that we capture from the objects tuition
+		tuitionBalance -= payment;
+		
+		// 4.  print out thank you and show the payment amount again
+		System.out.println("Thank you for your payment of " + payment);
+		
+		viewBalance();
 	}
 	
 
