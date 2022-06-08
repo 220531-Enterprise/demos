@@ -114,20 +114,23 @@ public class UserDaoImpl implements IUserDao{
 					
 					// 9. Set all the properties of our Temp user to what we returned from the DB
 					u.setId(id);
+					u.setUsername(returnedUsername);
+					u.setPwd(password);			
+					u.setRole(role);
 				}
 				
+			}	else {
+				logger.info("The User with the username " + username + " does not exist");
+//				return u; technically redundant, just ending the method early
 			}
 			
-			
-			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			logger.warn("SQL Exception thrown  -- can't retrieve User from DB");
 			e.printStackTrace();
 		}
 		
-		
-		
-		return null;
+		return u; // return the successfully intialized User IF the suer comes from the DB, it will have an ID > 0
+				  // If we were unsuccessful, the id is by default 0
 	}
 
 	@Override
