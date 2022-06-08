@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -64,8 +65,45 @@ public class AccountDaoImpl implements IAccountDao{
 
 	@Override
 	public List<Account> findByOwnerId(int accOwnerId) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Account> ownedAccounts = new LinkedList<>(); // O(1) adding/deleting 
+		
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			
+				String sql = "SELECT id, balance, active FROM accounts WHERE acc_owner = ?";
+			
+				PreparedStatement stmt = conn.prepareStatement(sql);
+				
+				stmt.setInt(1, accOwnerId);
+				
+				ResultSet rs;
+				
+				if ((rs= stmt.executeQuery()) != null) {
+					
+					// at this point we have a table of data that we can process
+					// there might be 4 different rows that are returned
+					while (rs.next()) {
+						
+						// capture the data of each Account record
+						int id = rs.getInt("id");
+						double balance = rs.getDouble("balance");
+						boolean isActive = rs.getBoolean("active");
+						
+						// build an Account obj and save to the linked List
+						Account a = new Account(id, balance, accOwnerId, isActive);
+						
+						// add the account to the list
+						ownedAccounts.add(a);
+					}	
+				}
+						
+		} catch (SQLException e) {
+			logger.warn("Unable to fetch accounts from DB with the owner id of " + accOwnerId);
+			e.printStackTrace();
+		}
+		
+		
+		return ownedAccounts; 
 	}
 
 	@Override

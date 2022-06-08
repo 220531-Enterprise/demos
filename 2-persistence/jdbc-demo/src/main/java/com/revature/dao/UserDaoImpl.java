@@ -4,11 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Types;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.revature.models.Account;
 import com.revature.models.Role;
 import com.revature.models.User;
 import com.revature.util.ConnectionUtil;
@@ -134,8 +137,61 @@ public class UserDaoImpl implements IUserDao{
 	}
 
 	@Override
-	public List<User> findAll() {
-		// TODO Auto-generated method stub
+	public List<User> findAll() { // id, username, pwd, role, account id, account balance, isActive
+	// we can't to call upon both the user data and their account data to fulgill a list of users with coplete lists of accoutns
+		
+		// make an empty list to store all the users (maybe a set)
+		List<User> allUsers = new LinkedList<User>();
+		
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			
+			Statement stmt = conn.createStatement(); // from the view I created
+			
+			String sql = "SELECT * FROM users_account_data";
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while (rs.next()) {
+				
+				
+				// grab the id, username, password, role
+				int userId = rs.getInt("id");
+				String username = rs.getString("username");
+				String password = rs.getString("pwd");
+				Role role = Role.valueOf(rs.getString("user_role_name"));
+				
+				// we have enough data to construct a User object, onto the Account object 
+				
+				// the value of the int wil be 0 if it's null
+				int accId = rs.getInt("account_id"); // this refers to the alias we provided in the view
+				double balance = rs.getDouble("balance");
+				boolean isActive = rs.getBoolean("active");
+				
+				
+				// if the account id is 0 
+				if (accId == 0) {
+					// instantiate the User with empty list of accounts
+					User u = new User(userId, username, password, role, new LinkedList<>());
+					allUsers.add(u);
+				} else {
+					
+					Account a = new Account(accId, balance, userId, isActive);
+					
+					// we need some way to check if the user  already exists in our list, and
+					// add appropraoate
+				
+					// TODO: FGINISH THIS METHOD
+				}
+				
+				
+			}	
+			
+		} catch (SQLException e) {
+			logger.warn("SQL Exception throwns, can't retreive all users from the DB);
+			e.printStackTrace();
+		}
+		
+		
 		return null;
 	}
 
