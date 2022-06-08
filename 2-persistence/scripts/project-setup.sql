@@ -13,8 +13,6 @@ CREATE TABLE users (
 	user_role_name user_role NOT NULL
 );
 
-select * FROM accounts;
-
 DROP TABLE IF EXISTS accounts CASCADE;
 CREATE TABLE accounts (
 
@@ -34,12 +32,6 @@ CREATE TABLE users_accounts_jt (
 );
 
 
-
--- insert 2 bank accounts for tony stark
-INSERT INTO accounts (balance, acc_owner, active) 
-	VALUES (1000, 1, FALSE),
-			(80000000, 1, TRUE);
-
 -- Create some type of function that will automatically be triggered to add that data into the
 -- users_accounts_jt....
 
@@ -54,6 +46,7 @@ AS $$
 		INSERT INTO users_accounts_jt (acc_owner, account)
 			VALUES (NEW.acc_owner, NEW.id);
 		
+		
 		RETURN NEW;
 	
 	END
@@ -66,26 +59,28 @@ CREATE TRIGGER upon_account_persistence
 	FOR EACH ROW
 	EXECUTE FUNCTION auto_insert_into_jt();
 
-
-select * FROM accounts;
-SELECT * FROM users;
-SELECT * FROM users_accounts_jt;
-		
-INSERT INTO accounts(balance, acc_owner, active)
-	VALUES (600, 2, FALSE),
-			(1000, 2, TRUE);
-		
--- to find all of Pepper Potts account ID's		
-SELECT account FROM users_accounts_jt WHERE acc_owner = 2;
 		
 		
 -- PL/SQL 
 -- Postgres is plpgsql
 -- Oracle's is Oracle pl/sql
 		
-		
-		
-		
-		
+-- I want to retrieve all the accounts that belong to one owner
+-- account ID, account Balance, isActive
+
+-- USER ID, USERNAME, PWD, ROLE, ACCOUNT_ID, ACCOUNT BAL, ACTIVE
+
+CREATE VIEW users_account_data AS
+SELECT users.id, users.username, users.pwd, users.user_role_name, 
+accounts.id AS accound_id, accounts.balance, accounts.active
+	FROM users
+	LEFT JOIN users_accounts_jt ON users.id = users_accounts_jt.acc_owner 
+	LEFT JOIN accounts ON accounts.id = users_accounts_jt.account;
+
+-- views are NOT snapshots in time (so they dyanmically update)
+SELECT * FROM users_account_data;
+
+--INSERT INTO users (username, pwd, user_role_name)
+--	VALUES ('antman', 'ants', 'Customer');
 		
 		
