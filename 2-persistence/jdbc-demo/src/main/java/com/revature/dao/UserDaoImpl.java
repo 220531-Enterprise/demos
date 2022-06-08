@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.revature.models.Role;
 import com.revature.models.User;
 import com.revature.util.ConnectionUtil;
 
@@ -78,7 +79,54 @@ public class UserDaoImpl implements IUserDao{
 
 	@Override
 	public User findByUsername(String username) {
-		// TODO Auto-generated method stub
+		
+		// 1. Establish a temp User object which will be returned 
+		User u = new User(); // by default the user's id is going to be 0
+		
+		// 2. Call on the Connection from our ConnectioUrtil class
+		try (Connection conn = ConnectionUtil.getConnection()) { // try with resources closes the resource after we open it
+			
+			// 3. Write a SQL statement to return the User with the username you're passing through
+			String sql = "SELECT * FROM users WHERE username = ?"; // JDBC API is built into the JRE java.sql
+			
+			// 4. Use a Prepared Statement to Prevent SQL Injection
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			// 5. Set the value of the ? equal to the username that's passed in
+			stmt.setString(1, username); // replace the first question mark with the value of the username that's passed through
+			
+			// 6. Declare a ResultSet object
+			ResultSet rs; // whatever object this ref variable points to has the behavior of a result 
+			
+			// 7. execute the query and IF it's not null, iterate over the data that's returned
+			if ((rs = stmt.executeQuery()) != null) { 
+				
+				// we iterate over the data returned byu using rs.next()
+				if (rs.next() == true) {
+					
+					// 8. capture the id of the User
+					int id = rs.getInt("id"); // returns the value of the user objects ID in the id column
+					String returnedUsername = rs.getString("username");
+					String password = rs.getString("pwd");
+					
+					// to get the ENUM from the DB and transform it into a Java Enum
+					Role role = Role.valueOf(rs.getString("user_role_name")); // object transpostion (transforming a DB type into a java type)
+					
+					// 9. Set all the properties of our Temp user to what we returned from the DB
+					u.setId(id);
+				}
+				
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 		return null;
 	}
 
