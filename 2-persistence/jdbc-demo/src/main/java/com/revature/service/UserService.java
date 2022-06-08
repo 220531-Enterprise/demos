@@ -57,7 +57,6 @@ public class UserService {
 		
 		// TODO:  add a check  incase returnedUser is Null
 		
-		
 		// then check if the User object's password is EQUAL TO the password passed through here
 		if (returnedUser.getPwd().equals(password)) { // provide some checks 
 			

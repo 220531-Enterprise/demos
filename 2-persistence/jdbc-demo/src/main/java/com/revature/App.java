@@ -100,7 +100,7 @@ public class App {
 			
 			
 			try {
-				uservice.register(newUser); // persists the new User to eh database
+				uservice.register(newUser); // persists the new User to the database
 			} catch (RegisterUserFailedException e) {
 				// in the case that the Exception is thrown and we can't register our User...
 				logger.warn(e.getMessage());
