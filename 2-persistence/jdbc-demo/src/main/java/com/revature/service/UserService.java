@@ -55,8 +55,11 @@ public class UserService {
 		// first fetch the object by calling the findByUsername() method
 		User returnedUser =  udao.findByUsername(username);
 		
+		// TODO:  add a check  incase returnedUser is Null
+		
+		
 		// then check if the User object's password is EQUAL TO the password passed through here
-		if(returnedUser.getPwd().equals(password)) {
+		if (returnedUser.getPwd().equals(password)) { // provide some checks 
 			
 			logger.info("Successfully Logged in the user with username " + username);
 			// if it is a match, return the user object
