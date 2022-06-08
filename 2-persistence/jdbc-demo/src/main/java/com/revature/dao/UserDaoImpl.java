@@ -32,16 +32,14 @@ public class UserDaoImpl implements IUserDao{
 		// Step 2. Generate a SQL statmeent to insert the User into the Database
 		String sql = "INSERT INTO users (username, pwd, user_role_name) VALUES (?, ?, ?) RETURNING users.id";
 		// the RETURNING statement returns the value of the PK that's generated -- OWASP: SQL Injection
-		
-		
 			
-			// Step 3. Use a preapres statement to avoide SQL injection
+			// Step 3. Use a prepared statement to avoid SQL injection
 			try {
 				PreparedStatement stmt = conn.prepareStatement(sql);
 				
 				// Step 4. set all of the ?? = to the value of the User's properties
-				stmt.setString(1, u.getUsername());
-				stmt.setString(2, u.getPwd());
+				stmt.setString(1, u.getUsername()); // the 1 refers to the order of the ?'s in the prepared statement
+				stmt.setString(2, u.getPwd()); // Here we'e setting the second ? mark (hence the 2)
 				
 				// This is a work around to transpose a Java ENUM to a RDBMS ENUM....
 				stmt.setObject(3, u.getRole(), Types.OTHER);
@@ -50,7 +48,7 @@ public class UserDaoImpl implements IUserDao{
 				ResultSet rs; // ResultSet is an interface from the JDBC API that allows us the behavior
 							  // of an object to iterate over data received from a database
 				
-				if ((rs = stmt.executeQuery()) != null) {
+				if ((rs = stmt.executeQuery()) != null) {  // rs = stmt.executeQuery will generate a record of data to iterate over
 					
 					// if we return data, we iterate over it 
 					rs.next();  // moves the cursor of the ResultSet over the information
