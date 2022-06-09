@@ -70,9 +70,11 @@ CREATE TRIGGER upon_account_persistence
 
 -- USER ID, USERNAME, PWD, ROLE, ACCOUNT_ID, ACCOUNT BAL, ACTIVE
 
+DROP VIEW users_account_data;
+
 CREATE VIEW users_account_data AS
 SELECT users.id, users.username, users.pwd, users.user_role_name, 
-accounts.id AS accound_id, accounts.balance, accounts.active
+accounts.id AS account_id, accounts.balance, accounts.active
 	FROM users
 	LEFT JOIN users_accounts_jt ON users.id = users_accounts_jt.acc_owner 
 	LEFT JOIN accounts ON accounts.id = users_accounts_jt.account;
