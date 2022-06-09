@@ -27,6 +27,7 @@ public class App {
 //		
 //		uDao.insert(u1);
 		
+		
 		menu();
 
 	}

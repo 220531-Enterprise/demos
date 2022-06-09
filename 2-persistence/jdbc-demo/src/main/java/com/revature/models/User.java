@@ -45,6 +45,14 @@ public class User implements Serializable{
 		this.role = role;
 		this.accounts = accounts;
 	}
+	
+	// add this method
+	public boolean addAccount(Account a) {
+		
+		return this.accounts.add(a);
+		
+	}
+	
 
 	public int getId() {
 		return id;
@@ -86,9 +94,13 @@ public class User implements Serializable{
 		this.accounts = accounts;
 	}
 
+	
+	
+	
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", pwd=" + pwd + ", role=" + role + "]";
+		return "User [id=" + id + ", username=" + username + ", pwd=" + pwd + ", role=" + role + ", accounts="
+				+ accounts + "]";
 	}
 
 	@Override

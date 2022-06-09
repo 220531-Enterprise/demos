@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.sql.Types;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
 
@@ -147,7 +148,7 @@ public class UserDaoImpl implements IUserDao{
 			
 			Statement stmt = conn.createStatement(); // from the view I created
 			
-			String sql = "SELECT * FROM users_account_data";
+			String sql = "SELECT * FROM users_account_data"; // this is a view
 			
 			ResultSet rs = stmt.executeQuery(sql);
 			
@@ -178,21 +179,22 @@ public class UserDaoImpl implements IUserDao{
 					Account a = new Account(accId, balance, userId, isActive);
 					
 					// we need some way to check if the user  already exists in our list, and
-					// add appropraoate
+					// add appropriate
 				
-					// TODO: FGINISH THIS METHOD
+					// TODO: FINISH THIS METHOD
+				
 				}
 				
 				
 			}	
 			
 		} catch (SQLException e) {
-			logger.warn("SQL Exception throwns, can't retreive all users from the DB);
+			logger.warn("SQL Exception throwns, can't retreive all users from the DB");
 			e.printStackTrace();
 		}
 		
 		
-		return null;
+		return allUsers;
 	}
 
 	@Override
