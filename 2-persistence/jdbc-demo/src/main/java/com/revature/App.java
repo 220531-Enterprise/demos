@@ -1,9 +1,11 @@
 package com.revature;
 
+import java.util.List;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
+import com.revature.dao.UserDaoImpl;
 import com.revature.exceptions.RegisterUserFailedException;
 import com.revature.models.Role;
 import com.revature.models.User;
@@ -27,14 +29,34 @@ public class App {
 //		
 //		uDao.insert(u1);
 		
+		UserService userv = new UserService(new UserDaoImpl());
 		
-		menu();
+		List<User> allUsers = userv.getAll();
+		
+		// all three of thes next lines do the same thing btw
+		
+		// print out EACH user on a separate line
+		allUsers.forEach(u -> System.out.println(u));
+		
+		
+		for (User u : allUsers) {
+			System.out.println(u);
+		}
+		
+		// Method referencing
+		// you infer the parameter
+		// reference the class and the 
+		// method that you want to call on each object
+		allUsers.forEach(System.out::println);
+		
+		
+//		menu();
 
 	}
 
 	static void menu() {
 
-		UserService uservice = new UserService();
+		UserService uservice = new UserService(new UserDaoImpl());
 
 		System.out.println("Welcome! Please press 1 if you'd like to login or 2 if you'd like to register");
 

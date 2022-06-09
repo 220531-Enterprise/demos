@@ -1,5 +1,7 @@
 package com.revature.service;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.revature.dao.IUserDao;
@@ -18,7 +20,17 @@ public class UserService {
 	
 	// DEPENDENCY INJECTION
 	// Inject an instance of the DAO into this 
-	public IUserDao udao = new UserDaoImpl();
+	private IUserDao udao; // declare that the Service owns a DAO object 
+	
+	// we need a way of injecting the implementation class of the DAO into this service object
+	// CONSTRUCTOR INJECTION ensures that an instance of the UserService can never be created or used without having 
+	// its dependencies fullfilled
+	public UserService(UserDaoImpl udaoImpl) {
+		
+		this.udao = udaoImpl;
+		
+	}
+
 	
 	// register method returns the User after it has been processed and entered in the DB
 	// and the User returned has an ID
@@ -73,6 +85,11 @@ public class UserService {
 		
 	}
 	
+	public List<User> getAll() {
+		
+		return udao.findAll();
+		
+	}
 	
 	
 

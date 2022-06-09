@@ -181,18 +181,39 @@ public class UserDaoImpl implements IUserDao{
 					// we need some way to check if the user  already exists in our list, and
 					// add appropriate
 				
-					// TODO: FINISH THIS METHOD
+					// potential owners = list of users who have already been added
+					List<User> potentialOwners = allUsers.stream() // Stream API we'll cover in Week 3
+							.filter(u -> u.getId() == userId)
+							.collect(Collectors.toList());
 				
+					// potential Owners contains all the user's that have the same ID that this Account object has as userId
+					
+					if (potentialOwners.isEmpty()) {
+						
+
+						List<Account> ownedAccounts = new LinkedList<>();
+						ownedAccounts.add(a);
+						User u = new User(userId, username, password, role, ownedAccounts);
+						
+						allUsers.add(u);
+					} else {
+						
+						// in the case that we've already added that User
+						// set this Uer eqaul to if
+						User u = potentialOwners.get(0);  // O(1) constant time complexity for retireval
+						// referring to the User that is ALREADY added in allUsers
+						
+						
+						// now we add the account to the user object without duplicating the user in the list
+						u.addAccount(a); 
+					}
 				}
-				
-				
 			}	
 			
 		} catch (SQLException e) {
 			logger.warn("SQL Exception throwns, can't retreive all users from the DB");
 			e.printStackTrace();
 		}
-		
 		
 		return allUsers;
 	}
