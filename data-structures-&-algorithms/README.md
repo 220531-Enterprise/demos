@@ -7,10 +7,7 @@ Just like a car mechanic needs the right tool to fix a car and make it run prope
 
 ## Content
 - **Searching Algorithms**
-  - Question #7 in the `java-20-questions` challenge
-    > You may need to modify the method signature like so: <br>
-    > `extend static class BinarySearch<T extends Comparable<T>> { ... }`
   
-  - Hackerrank Challenge: [Binary Search](https://www.hackerrank.com/contests/launchpad-1-winter-challenge/challenges/binary-search-basic/problem) 👈 
+  - Leet Code Challenge: [Binary Search](https://leetcode.com/problems/binary-search) 👈 
 
 <br>
