@@ -11,3 +11,7 @@ Just like a car mechanic needs the right tool to fix a car and make it run prope
   - Leet Code Challenge: [Binary Search](https://leetcode.com/problems/binary-search) 👈 
 
 <br>
+
+## Extra Practice
+I recommend you follow this[ Leet Code Interview Practice Guide](https://www.techinterviewhandbook.org/best-practice-questions/) daily for personal coding practice. <br>
+Start with [this problem](https://leetcode.com/problems/contains-duplicate/) :point_left:
