@@ -46,8 +46,9 @@ public final class Location { // final prevents a class from being extended
 		// we do NOT want to return this.exits
 		// because if we did we open up the possibility for the calling progrma to MODIFY the location
 		
-		return new HashMap<String, Integer>(this.exits);
-		// this returns a COPY (like a snapshot) that the calling program can't change 
+//		return this.exits; // this would allow them WRITE access in which they could change 
+		return new HashMap<String, Integer>(this.exits); // only allow READ access by returning a copy of the values
+		// this returns a COPY (like a snapshot) that the calling program can't change the map's records
 	}
 
 	// just open the option to get description and ID
