@@ -1,7 +1,7 @@
 package com.revature.lambdas;
 
 // A simple POJO (Plain Old Java Object)
-public class Employee {
+public class Employee implements Comparable<Employee>{
 
 	private String name;
 	private int age;
@@ -12,6 +12,14 @@ public class Employee {
 		this.name = name;
 		this.age = age;
 		this.yearsWorked = yearsWorked;
+	}
+	
+	// This method comes from the functional interface Comparable
+	@Override
+	public int compareTo(Employee e) {
+		// we want to compare employees by the time they've worked
+		// Call Doubl Wrapper class 
+		return (int) (this.getYearsWorked() - e.getYearsWorked());
 	}
 
 	public String getName() {
