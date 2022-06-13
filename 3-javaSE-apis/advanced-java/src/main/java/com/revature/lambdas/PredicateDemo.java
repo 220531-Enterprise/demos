@@ -50,7 +50,7 @@ public class PredicateDemo {
 		employees.forEach(e -> {
 			
 			if (ageCondition.test(e)) {
-				System.out.println(e + " RETUEND TRUE FOR THE PREDICATE AGE CONDITION");
+				System.out.println(e + " RETURN TRUE FOR THE PREDICATE AGE CONDITION");
 			}
 			
 		});
