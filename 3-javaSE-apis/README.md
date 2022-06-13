@@ -1,6 +1,6 @@
 # Week 3: Java SE API's and Multithreading
-*Be sure to study the following questions.  On Monday or Tuesday Jan. 3rd or 4th (TBA), you will be QC'd on the following material plus Week 2 SQL & JDBC [questions](https://github.com/2111209-Enterprise/demos/blob/main/2-persistence/qc-questions.md).* <br>
-- *[Week 2 study guide here](https://github.com/211129-Enterprise/demos/blob/main/2-persistence/notes/sql.md) to answer the above linked questions.*
+*Be sure to study the following questions.  On Monday or Tuesday June 20th or 21st (TBA), you will be QC'd on the following material plus Week 2 SQL & JDBC [questions](https://github.com/220531-Enterprise/demos/blob/main/2-persistence/README.md).* <br>
+- *[Week 2 study guide here]() to answer the above linked questions.*
 
 <br>
 
