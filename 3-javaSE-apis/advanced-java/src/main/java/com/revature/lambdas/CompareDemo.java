@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class CompareDemo {
 
@@ -64,24 +65,52 @@ public class CompareDemo {
 		// (3) Lambda Expression -- a much more succinct way of doing the above
 		Collections.sort(employees, (e1, e2) -> e1.getName().compareTo(e2.getName()));
 		
+		Consumer<Employee> myFunction =  e -> System.out.println(e);
+		// wherever a consumer function is accepted, you can pass this method
+		employees.forEach(myFunction);
+		
 		
 		/**
 		 * Challenge: Create an AGE Sorter via the Comparator interface via 3 ways:
 		 * 
 		 * (1) Create a class called AgeSorter that implements Comparator 
-		 * (2) call Collections.sort(employees, new Comparator<Employee>() { ...... }
+		 * (2) Use Anon Class to call Collections.sort(employees, new Comparator<Employee>() { ...... }
 		 * (3) Create a lambda expression that sorts employees by age
 		 * 
 		 * Answer at 12:45pm ET
 		 */
 		
+		// ANSWER #1  sorting the employees data structure by the comparator class
+		Collections.sort(employees, new AgeSorter());
 		
+		// ANSWER #2 using Anonymous class
+		Collections.sort(employees, new /* ghost class */ Comparator<Employee>() {
+
+			@Override
+			public int compare(Employee e1, Employee e2) {
+				return e1.getAge() - e2.getAge();
+			}
+		});
 		
-		
+		// ANSWER #3 using lambda expression
+		Collections.sort(employees, (e1, e2) -> e1.getAge() - e2.getAge());
 
 	}
 
 }
+
+class AgeSorter implements Comparator<Employee> {
+
+	@Override
+	public int compare(Employee e1, Employee e2) {
+	
+		return e1.getAge() - e2.getAge();
+	}
+	
+	
+	
+}
+
 
 class NameSorter implements Comparator<Employee> {
 
