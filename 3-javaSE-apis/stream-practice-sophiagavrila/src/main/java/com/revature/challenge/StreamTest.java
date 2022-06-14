@@ -205,15 +205,8 @@ public class StreamTest {
  
         namesList.stream().sorted().forEach(System.out::println);
 
-        
- 
+       
     }
     
     
 }
-
-
-
-
-
-
