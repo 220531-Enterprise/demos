@@ -106,10 +106,16 @@ public class StreamTest {
              names to the console.
          ***************************************************************************/
 
+        System.out.println("===== # 4 ========");
         
-        // Code your Solution here
-        
-        
+        List<Student> sWith1233And1234 = students.stream()
+        		.filter(s -> s.getMobileNumbers()
+        			.stream().anyMatch(n -> n.getNumber().equals("1233")))
+        		.filter(s->s.getMobileNumbers()
+        			.stream().anyMatch(n -> n.getNumber().equals("1234")))
+				.collect(Collectors.toList());
+        			
+        sWith1233And1234.forEach(s -> System.out.println(s));
         
         
         
@@ -133,9 +139,11 @@ public class StreamTest {
         List<TempStudent> tmpStudents = Arrays.asList(tmpStud1, tmpStud2);
         
         // Code your Solution here, don't touch the code above
- 
+        List<Student> studentList = tmpStudents.stream()
+        		.map(s -> new Student(s.name, s.age, s.address, s.mobileNumbers))
+        		.collect(Collectors.toList());
 
-        
+        System.out.println(studentList);
         
         
  
@@ -146,7 +154,11 @@ public class StreamTest {
         ****************************************************************************/
 
         
-        // Code your Solution here
+       List<String> studentNames = studentList.stream()
+    		   .map(Student::getName) // Student::getName 
+    		   .collect(Collectors.toList());
+       
+       System.out.println(studentNames);
 
         
         
@@ -158,7 +170,11 @@ public class StreamTest {
         ****************************************************************************/
 
         
-        // Code your Solution here
+       String name = studentList.stream()
+    		   .map(s -> s.getName())
+    		   .collect(Collectors.joining(" "));
+      
+       System.out.println(name);
 
         
         
@@ -171,10 +187,13 @@ public class StreamTest {
         List<String> nameList =
             Arrays.asList("Bob", "Danny", "Alice", "Eddie", "Cathy");
  
-        // Code your Solution here, don't touch the code above
+        
+        List<String> nameUpperCase = nameList.stream()
+        		.map(String::toUpperCase)
+        		.collect(Collectors.toList());
 
         
-        
+        System.out.println(nameUpperCase);
         
         
         /****************************************************************************
@@ -184,10 +203,8 @@ public class StreamTest {
         List<String> namesList =
             Arrays.asList("Bob", "Danny", "Alice", "Eddie", "Cathy");
  
-        // Code your Solution here, don't touch the code above
+        namesList.stream().sorted().forEach(System.out::println);
 
-
-        
         
  
     }
