@@ -62,11 +62,8 @@ public class ThreadCreation {
 		Thread customThread = new MyCustomThread();
 		
 		customThread.start();
-		
-		
+
 	}
-	
-	
 
 }
 
@@ -78,7 +75,6 @@ class MyTask implements Runnable { // (1)
 		System.out.println("The task is runnin!!");
 		
 	}
-	
 }
 
 class MyCustomThread extends Thread {
@@ -86,8 +82,6 @@ class MyCustomThread extends Thread {
 	public void run() {
 		System.out.println("My custom thread is running!");
 	}
-	
-	
 }
 
 

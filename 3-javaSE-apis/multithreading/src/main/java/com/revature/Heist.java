@@ -1,5 +1,7 @@
 package com.revature;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Heist {
@@ -18,7 +20,20 @@ public class Heist {
 		Vault vault = new Vault(password);
 		
 		// 3. Instantiate 3 threads: 1 cop thread, 2 hacker threads
+		DescendingHackerThread descHacker = new DescendingHackerThread(vault);
+		AscendingHackerThread ascHacker = new AscendingHackerThread(vault);
+		PolicemanThread policemanThread = new PolicemanThread();
 		
+		// add each thread to a list of threads
+		List<Thread> threads = new ArrayList<Thread>();
+		threads.add(descHacker);
+		threads.add(ascHacker);
+		threads.add(policemanThread);
+		
+		// then call the forEach() method on the list, and start() each one
+//		threads.forEach(t -> t.start());
+		threads.forEach(Thread::start);
+
 	}
 	
 	// DRY - Don't Repeat Yourself
@@ -78,13 +93,42 @@ public class Heist {
 		public void run() {
 			
 			// CHALLENGE: make the AscendingHackerThread iterate from 0 to MAX_PASSWORD
+			for (int guess = 0; guess <= MAX_PASSWORD; guess++) {
+				
+				if (vault.isCorrectPassword(guess)) {
+					System.out.println(this.getName() + " guessed the password! The password was " + guess);
+					System.exit(0); // terminate the program 
+				}
+				// if the if-condition is FALSE, we break down here and continue the loop until we find the correct #
+			}
 			
 		}
-		
-		
-		
 	}
 	
+	// the only purpose of this thread is to count down from 10 (in 10 seconds)
+	private static class PolicemanThread extends Thread {
+		
+		@Override
+		public void run() {
+			
+			// this is the thread's job when it's in the running phase
+			for (int i=7; i >= 0; i--) { // change i's start calue to increase seconds time
+				
+				try {
+					Thread.sleep(1000); // put it to sleep for 1 second on each iteration
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} 
+				
+				// print out how many seconds left on each iteration
+				System.out.println(i + " seconds left!");
+			}
+			
+			// after the for loop ends (time is out) print out a message and quit the program
+			System.out.println("Game over for you, Hackers!");
+			System.exit(0); // terminate the program
+		}
+	}
 	
 	
 	
