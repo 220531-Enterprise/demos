@@ -10,21 +10,27 @@ public class CrimeDao {
 	
 	// CRUD methods
 	
-	// Create: return the PK that's generates in the DB
+	// Create: return the PK that's generated in the DB
 	public int insert(Crime crime) {
 		
-		// capture the session -- call getSession() from the HIbernate helper class
+		// capture a session (call the getSession() method from the helper class
 		Session ses = HibernateUtil.getSession();
 		
-		// set up a transaction (1 unit of work performed against the DB) 
-		Transaction tx = ses.beginTransaction();
+		// set up a Transaction 
+		Transaction tx = ses.beginTransaction(); // Transaction interface is uniquely from Hibernate
 		
-		// call the save() method from the session an reutnr the PK
+		// capture the value returned from calling .save() on the object
 		int pk = (int) ses.save(crime);
 		
-		// Session Methods exist for every type of operation
+		/**
+		 * Objects in a Hiberate app in relation to the Session can be
+		 * 
+		 * - Transient (never in a relationship with the session - has never been persisted to the database)
+		 * - Persistent (in a relationship with the session and has been persisted)
+		 * - Detached (the session it was related to was closed - broken up with session) 
+		 */
 		
-		// commit the tx
+		// commit the transaction
 		tx.commit();
 		
 		// return the PK

@@ -17,7 +17,7 @@ public class App {
 		System.out.println("Starting application");
 		
 		// Typically you call the Service layer, but
-		// we're going to call the DAO directly
+		// we're going to call the DAO directly for demo purposes
 		
 		// 1. INstantiate a Crime obj
 		Crime c1 = new Crime("Time Manipulation", "freezin' time robbin' banks");

@@ -34,14 +34,14 @@ public class SuperVillain { // if we didn't give it a name, it would just create
 	// This relationship will be best described by a Joins table - we want hibernate to make the joins table for us
 	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	List<Crime> crimes;
-	// the data won't be loaded into memory until we call getCrimes();
+	// FetchType.LAZY means the data won't be loaded into memory until we call getCrimes();
 	
 	// Wherever ManyToOne is declared, that dictates
 	// the OWNER of the relationship
 	
 	// the SuperPrison where they reside - ManyToOne
 	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-	@JoinColumn(name="prison_foreign_key")
+	@JoinColumn(name="prison_foreign_key") // we will create a 5th column which holds prison's FK
 	private SuperPrison superPrisonHolder; 
 	
 	public SuperVillain() {
