@@ -8,13 +8,11 @@ import java.util.Arrays;
 
 /**
  * Reflection is the process of inspecting and/or modifying the behavior of a
- * class runtime by way of the methods found in the Reflection API (part of the
- * JRE) java.lang.reflect
- * 
- * JDK Dynamic Proxy
+ * class at runtime by way of the methods found in the Reflection API (part of the
+ * JRE) java.lang.reflect package.
  *
  * The purpose of this class will be to INSPECT the properties of a class at
- * runtime
+ * runtime using the inspectClass() method.
  */
 public class ClassInspector {
 	
