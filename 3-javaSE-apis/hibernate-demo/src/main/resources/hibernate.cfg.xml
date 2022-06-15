@@ -1,0 +1,46 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   <session-factory>
+   
+      <property name = "hibernate.dialect">
+         org.hibernate.dialect.PostgreSQLDialect
+      </property>
+      
+      <property name = "hibernate.connection.driver_class">
+         org.postgresql.Driver
+      </property>
+      
+      <!-- Assume test is the database name -->
+      <property name = "hibernate.connection.url">
+        jdbc:postgresql://localhost:5432/postgres
+      </property>
+      
+      <property name = "hibernate.connection.username">
+        postgres
+      </property>
+      
+      <property name = "hibernate.connection.password">
+        postgres
+      </property>
+      
+      <property name="hibernate.default_schema">public</property>
+      
+      <!-- CREATE will drop any existing tables and RE-CREATE our tables -->
+      <property name="hibernate.hbm2ddl.auto">create</property>
+      		
+		<!-- UPDATE: wouldn't delete anything, but would add tables or object  -->
+		<!-- VALIDATE: best for production checks to make sure that everything in the DB is as expected -->
+		<!-- NONE: hibernate doens't alter your schema or do anything -->
+      
+      
+      
+      <!--  This will show all of the SQL statemnets that hibernate is generating for us -->
+      <property name="hibernate.show_sql">true</property>
+      
+      <!-- List of persistent classes -->
+      <mapping class = "com.revature.models.Crime"/>
+      
+   </session-factory>
+</hibernate-configuration>
