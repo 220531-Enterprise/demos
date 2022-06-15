@@ -34,6 +34,7 @@
 		<!-- VALIDATE: best for production checks to make sure that everything in the DB is as expected -->
 		<!-- NONE: hibernate doens't alter your schema or do anything -->
       
+      <property name="connection.pool_size">10</property>
       
       
       <!--  This will show all of the SQL statemnets that hibernate is generating for us -->
