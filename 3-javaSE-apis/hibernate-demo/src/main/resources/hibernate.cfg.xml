@@ -41,6 +41,8 @@
       
       <!-- List of persistent classes -->
       <mapping class = "com.revature.models.Crime"/>
+      <mapping class = "com.revature.models.SuperVillain"/>
+      <mapping class = "com.revature.models.SuperPrison"/>
       
    </session-factory>
 </hibernate-configuration>
