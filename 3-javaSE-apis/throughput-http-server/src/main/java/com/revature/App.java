@@ -25,7 +25,7 @@ public class App {
 	 * 
 	 * Step 1b. Save the path of book resource as a final String variable;
 	 */
-    private static final String INPUT_FILE = "C:\\Users\\SophieGavrila\\Documents\\Threads\\Threads\\src\\main\\resources\\war_and_peace.txt";
+    private static final String INPUT_FILE = "C:\\Users\\SophieGavrila\\Desktop\\demos\\3-javaSE-apis\\throughput-http-server\\src\\main\\resources\\war_and_peace.txt";
     
     // variable passed to executor to control thread pool size
     private static final int NUMBER_OF_THREADS = 4;

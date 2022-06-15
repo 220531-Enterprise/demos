@@ -45,9 +45,9 @@ public class ProducerConsumer {
 		System.out.println("End of the main method");
 		
 		// what does wait() do? (comes from the Object.java class)
-		// what does notifyAll() do?
+		// what does notifyAll() do? (comes from the Object.java class)
 		// what does the synchronized keyword do?
-		// what does join() do? (comes from Thread class)
+		// what does join() do? (comes from Thread.java class)
 		
 	}
 	
@@ -61,9 +61,10 @@ class Holder {
 	
 	// The Consumer thread will call this method on the Holder object
 	// any thread that accesses a synchronized  method obtains a lock
-	// when entering the method.  Only one thread at a time can access a method that's marked as synchronize
-	synchronized int getVal() { // returns the value of the contens
-		// when the consumer is DONE  rreading the value, we signal to the producer 
+	// when entering the method.  Only one thread at a time can access a method that's marked as synchronized
+	// synchronized opens up the ability to signal to other threads that are using this object
+	synchronized int getVal() { // returns the value of the contents
+		// when the consumer is DONE reading the value, we signal to the producer 
 		
 		try {
 			Thread.sleep(5); // this is an extra second to allow the producer to complete before we get another value
