@@ -7,7 +7,7 @@
 * Finance managers can log in and view all reimbursement requests and past history for all employees in the company. 
 * Finance managers are authorized to approve and deny requests for expense reimbursement.
 
-#### Tech Stack
+## Tech Stack
 Java 8, Servlet API, Apache Tomcat, Hibernate, PostgreSQL, HTML, CSS, JavaScript, Amazon EC2, Docker
 
 * The back-end system shall use Hibernate which manages a connection to an **AWS RDS Postgres database**. 
@@ -15,6 +15,24 @@ Java 8, Servlet API, Apache Tomcat, Hibernate, PostgreSQL, HTML, CSS, JavaScript
 * The middle tier shall use Servlet technology for dynamic Web application development. 
 * The front-end view shall use HTML/CSS/JavaScript to make an application that can call server-side components and be styled with CSS. 
 * The middle tier shall follow proper layered architecture, and have reasonable test coverage of the service layer.
+
+## Workflow Suggestions
+For software teams, the stand-up is like the team’s huddle. It’s even commonly known as the daily scrum, and reinforces “we” to keep everyone aware of the team’s landscape and progress.
+
+- Every day you should have a stand-up meeeting with your team. 
+- Elect a Leader within your team who will represent the main point of contact & assist in task mgmt.
+
+#### In your Team Standups Use the 3 question agenda:
+*Team Lead asks each attendee to answer these questions.*
+
+  1. *What have I done since the last meeting?*
+  2. *What do I plan to complete before the next meeting*
+  3. *What problems am I likely to face?*
+
+*Don’t spend too much time on status updates. Focus on what needs to be done and the problems or impediments that may arise.*
+> Of course, your team is responsible for holding additional planning and collaboration meetings -- stand-ups are simply a check-in.
+
+- Use a [Kanban Board](https://www.atlassian.com/agile/kanban/boards) like [Trello](https://trello.com/?&aceid=&adposition=&adgroup=105703214328&campaign=9843285532&creative=437184392320&device=c&keyword=trello&matchtype=e&network=g&placement=&ds_kids=p53016490704&ds_e=GOOGLE&ds_eid=700000001557344&ds_e1=GOOGLE&gclid=Cj0KCQiA2af-BRDzARIsAIVQUOfgZifIwr-ClvNLXs4m9zn7VFhTU4bXoVdq1iBVe7SNfiXGeVVNKlgaAsHAEALw_wcB&gclsrc=aw.ds)
 
 #### Employee User Stories 
 - An Employee can login
@@ -39,6 +57,7 @@ Java 8, Servlet API, Apache Tomcat, Hibernate, PostgreSQL, HTML, CSS, JavaScript
 - A Manager can view all Employees
 - A Manager can view reimbursement requests from a single Employee 
 
+### Diagrams To Help Get you Started
 
 **State-chart Diagram (Reimbursement Statuses)** 
 ![](./imgs/state-chart.jpg)
