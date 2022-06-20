@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	version="2.5">
-	<display-name>hello-servlets</display-name>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list>
-
-	<servlet>
-		<servlet-name>DirServ</servlet-name>
-		<servlet-class>com.revature.directservlet.DirectServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>DirServ</servlet-name>
-		<url-pattern>/dirserv</url-pattern>
-	</servlet-mapping>
-
-
-
-	<servlet>
-		<servlet-name>IndirectServlet</servlet-name>
-		<servlet-class>com.revature.indirectservlet.IndirectServlet</servlet-class>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>IndirectServlet</servlet-name>
-		<url-pattern>/indirserv</url-pattern>
-	</servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>hello-servlets</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>DirServ</servlet-name>
+    <servlet-class>com.revature.directservlet.DirectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DirServ</servlet-name>
+    <url-pattern>/dirserv</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>IndirectServlet</servlet-name>
+    <servlet-class>com.revature.indirectservlet.IndirectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IndirectServlet</servlet-name>
+    <url-pattern>/indirserv</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionServlet</display-name>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>com.revature.sessionservlet.SessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/SessionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HelperSessionServlet</display-name>
+    <servlet-name>HelperSessionServlet</servlet-name>
+    <servlet-class>com.revature.sessionservlet.HelperSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelperSessionServlet</servlet-name>
+    <url-pattern>/HelperSessionServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
