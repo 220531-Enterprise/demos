@@ -22,9 +22,16 @@
 			<version>3.1.0</version>
 		</dependency>
 
+<!-- Jackon is an object Mapping library we wil use to convert Java Objects into JSON
+Marshalling is Java -> JSON, UNmarshalling is JSON to Java -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.13.0</version>
+		</dependency>
 
 	</dependencies>
-	
+
 	<!-- This plugin typically fixes -->
 	<build>
 		<plugins>

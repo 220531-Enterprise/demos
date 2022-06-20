@@ -6,5 +6,34 @@
 </head>
 <body>
 	<h1>Welcome to Supervillain Servlets!</h1>
+	
+	<!-- The action mathces the URL pattern where the url "/dirserv" is available -->
+	<form method="GET" action="dirserv">
+		
+			<p>Hit the Direct Servlet with a GET request!</p>
+			
+			<!-- This is a way of making a button -->
+			<input type="submit" value="Direct Text Response">
+	</form>
+	
+	<!--  This form will send a POST request -->
+	<form method="POST" action="dirserv">
+		
+			<p>Hit the Direct Servlet with a POST request!</p>
+			
+			<!-- This is a way of making a button -->
+			<input type="submit" value="Send POST Request to Direct Servlet">
+	</form>
+	
+	<!--  Create a form that sends a GET request to the indirect servlet -->
+		<!--  This form will send a POST request -->
+	<form method="GET" action="indirserv">
+		
+			<p>Hit the Indirect Servlet with a GET request!</p>
+			
+			<!-- This is a way of making a button -->
+			<input type="submit" value="Send POST Request to Direct Servlet">
+	</form>
+	
 </body>
 </html>

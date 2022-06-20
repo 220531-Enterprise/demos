@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet; // this is the Servlet API we added to ou
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.models.SuperVillain;
+
 /**
  * This class is a Servlet class
  * This class extends server side capabilities of a Java program.
@@ -34,6 +37,50 @@ public class DirectServlet extends HttpServlet { // HttpServlet extends GenericS
 
 	}
 	
+	
+	/**
+	 * When this servlet is hit with a POST request, this method will be invoked
+	 * 
+	 */
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		
+		// send a Java object in JSON (JavaScript Object Notation)
+		// JSON is a data interchange format
+		
+		// We need an Object Mapper to take a Java Object and transform it 
+		// into an object that could be read by a browser (or app running in a browser) 
+		
+		// Step 1. set the repsonse type to JSON
+		response.setContentType("application/json");
+		
+		// Step 2. Instantitate the object
+		SuperVillain vill = new SuperVillain("The Penguin", "money", 9000.02);
+		
+		// Step 3. Transform the Java Object to JSON (MARSHALL IT) using our Object Mapper
+		String jsonString = new ObjectMapper().writeValueAsString(vill);
+		// ObjectMapper comes from Jackson Databind dependency
+		
+		// Step 4. write it out
+		PrintWriter out = response.getWriter(); // grab the PrintWriter
+		out.write(jsonString); // the print writer just prints data to the client
 		
 	
+	}
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
