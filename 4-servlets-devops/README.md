@@ -1,5 +1,5 @@
 # Week 4: Servlets, HTTP, & DevOps
-QC for this week will be held on **TBA**. QC questions [here](https://github.com/220531-Enterprise/demos/tree/main/4-servlets-devops) 👈
+QC for this week will be held on **TBA**. QC questions [here]((https://github.com/220531-Enterprise/demos/blob/main/4-servlets-devops/qc-questions.md) 👈
 
 ## Topics Covered
 *Click the links below to view the associated notes:*
