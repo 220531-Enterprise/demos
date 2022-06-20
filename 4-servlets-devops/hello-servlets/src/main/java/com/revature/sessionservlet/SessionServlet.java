@@ -41,7 +41,7 @@ public class SessionServlet extends HttpServlet {
 	}
 
 	
-	// This method will capture the parameters of teh HTTP request body when we send
+	// This method will capture the parameters of the HTTP request body when we send
 	// a CUSTOM villain to the session (by way of the user filling out the form in the index.html)
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
