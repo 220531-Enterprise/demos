@@ -57,6 +57,7 @@ For software teams, the stand-up is like the team’s huddle. It’s even common
 - A Manager can view all Employees
 - A Manager can view reimbursement requests from a single Employee 
 
+### Diagrams To Help Get you Started
 
 **State-chart Diagram (Reimbursement Statuses)** 
 ![](./imgs/state-chart.jpg)
