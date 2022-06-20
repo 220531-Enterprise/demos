@@ -22,8 +22,6 @@ For software teams, the stand-up is like the team’s huddle. It’s even common
 - Every day you should have a stand-up meeeting with your team. 
 - Elect a Leader within your team who will represent the main point of contact & assist in task mgmt.
 
-<br>
-
 #### In your Team Standups Use the 3 question agenda:
 *Team Lead asks each attendee to answer these questions.*
 
