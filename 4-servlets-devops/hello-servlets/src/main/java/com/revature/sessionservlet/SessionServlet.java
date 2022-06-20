@@ -40,9 +40,57 @@ public class SessionServlet extends HttpServlet {
 		
 	}
 
+	
+	// This method will capture the parameters of teh HTTP request body when we send
+	// a CUSTOM villain to the session (by way of the user filling out the form in the index.html)
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doGet(request, response);
+		// 1. Extract the params from the request and store them in a variable
+		String name = request.getParameter("vill-name");
+		String superpower = request.getParameter("superpower");
+		double bounty = Double.parseDouble(request.getParameter("bounty"));
+		
+		// 2. Instantiate a SuperVillain object  with those variables passed thru a constructor
+		SuperVillain vill = new SuperVillain(name, superpower, bounty);
+		
+		// 3, Grab the HTTP Session from the request object
+		HttpSession session = request.getSession(); // the client sends the request  which possesses a session property
+		
+		
+		// Stored it in the DB -- called the Service layer which called the DAO which persisted the object into the DB
+		
+		// 4. Set "the-villain" name to the object by calling session.setAttrbiute()
+		session.setAttribute("the-villain", vill);
+		
+		// 5. Print out to the client that a villain has been set to the session
+		PrintWriter out = response.getWriter();
+		out.println("A villain is on the loose...in the session");
+		
+		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

@@ -28,7 +28,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>SessionServlet</servlet-name>
-    <url-pattern>/SessionServlet</url-pattern>
+    <url-pattern>/sesserv</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -38,6 +38,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>HelperSessionServlet</servlet-name>
-    <url-pattern>/HelperSessionServlet</url-pattern>
+    <url-pattern>/helpersesserv</url-pattern>
   </servlet-mapping>
 </web-app>
