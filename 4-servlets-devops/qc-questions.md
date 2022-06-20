@@ -9,7 +9,7 @@
 <br>
 
 ## HTTP
-- Review Study guide [here](https://github.com/220214-Enterprise-Angular/demos/blob/main/4-servlets-devops/notes/http.md)
+- Review Study guide [here](https://github.com/220531-Enterprise/demos/blob/main/4-servlets-devops/notes/http.md)
 
 
 <br>
