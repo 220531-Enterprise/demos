@@ -1,6 +1,6 @@
 # Upcoming QC Questions for Monday Jan. 3rd :
 > Topics: <br>
-> - Review this [HTTP Study Guide](https://github.com/220214-Enterprise-Angular/demos/blob/main/4-servlets-devops/notes/http.md)
+> - Review this [HTTP Study Guide](https://github.com/220531-Enterprise/demos/blob/main/4-servlets-devops/notes/http.md)
 > - [Servlets](#servlets)
 > - [AWS](#aws)
 > - [DevOps](#devops)
