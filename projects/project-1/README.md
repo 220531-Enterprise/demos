@@ -24,7 +24,7 @@ For software teams, the stand-up is like the team’s huddle. It’s even common
 
 <br>
 
-### In your Team Standups Use the 3 question agenda:
+#### In your Team Standups Use the 3 question agenda:
 *Team Lead asks each attendee to answer these questions.*
 
   1. *What have I done since the last meeting?*
@@ -34,7 +34,7 @@ For software teams, the stand-up is like the team’s huddle. It’s even common
 *Don’t spend too much time on status updates. Focus on what needs to be done and the problems or impediments that may arise.*
 > Of course, your team is responsible for holding additional planning and collaboration meetings -- stand-ups are simply a check-in.
 
--Use a [Kanban Board](https://www.atlassian.com/agile/kanban/boards) like [Trello](https://trello.com/?&aceid=&adposition=&adgroup=105703214328&campaign=9843285532&creative=437184392320&device=c&keyword=trello&matchtype=e&network=g&placement=&ds_kids=p53016490704&ds_e=GOOGLE&ds_eid=700000001557344&ds_e1=GOOGLE&gclid=Cj0KCQiA2af-BRDzARIsAIVQUOfgZifIwr-ClvNLXs4m9zn7VFhTU4bXoVdq1iBVe7SNfiXGeVVNKlgaAsHAEALw_wcB&gclsrc=aw.ds)
+- Use a [Kanban Board](https://www.atlassian.com/agile/kanban/boards) like [Trello](https://trello.com/?&aceid=&adposition=&adgroup=105703214328&campaign=9843285532&creative=437184392320&device=c&keyword=trello&matchtype=e&network=g&placement=&ds_kids=p53016490704&ds_e=GOOGLE&ds_eid=700000001557344&ds_e1=GOOGLE&gclid=Cj0KCQiA2af-BRDzARIsAIVQUOfgZifIwr-ClvNLXs4m9zn7VFhTU4bXoVdq1iBVe7SNfiXGeVVNKlgaAsHAEALw_wcB&gclsrc=aw.ds)
 
 #### Employee User Stories 
 - An Employee can login
