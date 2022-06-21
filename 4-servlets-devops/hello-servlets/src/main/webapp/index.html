@@ -3,99 +3,87 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Hello Servlets</title>
+
+<!-- This is external styling -- linking to an 
+external style sheet makes this more maintainable and 
+readable -->
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
 </head>
 <body>
-	<h1>Welcome to Supervillain Servlets!</h1>
 
-	<!-- The action mathces the URL pattern where the url "/dirserv" is available -->
-	<form method="GET" action="dirserv">
+	<div class="supervillain-container">
 
-		<p>Hit the Direct Servlet with a GET request!</p>
+		<h1>Welcome to Supervillain Servlets!</h1>
 
-		<!-- This is a way of making a button -->
-		<input type="submit" value="Direct Text Response">
-	</form>
+		<!-- The action mathces the URL pattern where the url "/dirserv" is available -->
+		<form method="GET" action="dirserv">
 
-	<!--  This form will send a POST request -->
-	<form method="POST" action="dirserv">
+			<p>Hit the Direct Servlet with a GET request!</p>
 
-		<p>Hit the Direct Servlet with a POST request!</p>
+			<!-- This is a way of making a button -->
+			<input type="submit" value="Direct Text Response">
+		</form>
 
-		<!-- This is a way of making a button -->
-		<input type="submit" value="Send POST Request to Direct Servlet">
-	</form>
+		<!--  This form will send a POST request -->
+		<form method="POST" action="dirserv">
 
-	<!--  Create a form that sends a GET request to the indirect servlet -->
-	<!--  This form will send a POST request -->
-	<form method="GET" action="indirserv">
+			<p>Hit the Direct Servlet with a POST request!</p>
 
-		<p>Hit the Indirect Servlet with a GET request!</p>
+			<!-- This is a way of making a button -->
+			<input type="submit" value="Send POST Request to Direct Servlet">
+		</form>
 
-		<!-- This is a way of making a button -->
-		<input type="submit" value="Send GET Request to Indirect Servlet">
-	</form>
+		<!--  Create a form that sends a GET request to the indirect servlet -->
+		<!--  This form will send a POST request -->
+		<form method="GET" action="indirserv">
 
-	<form method="POST" action="indirserv">
+			<p>Hit the Indirect Servlet with a GET request!</p>
 
-		<p>Hit the Indirect Servlet with a POST request!</p>
+			<!-- This is a way of making a button -->
+			<input type="submit" value="Send GET Request to Indirect Servlet">
+		</form>
 
-		<!-- This is a way of making a button -->
-		<input type="submit" value="Send POST Request to Indirect Servlet">
-	</form>
+		<form method="POST" action="indirserv">
 
-	<form method="GET" action="sesserv">
+			<p>Hit the Indirect Servlet with a POST request!</p>
 
-		<p>Hit the Session Servlet with a GET request!</p>
+			<!-- This is a way of making a button -->
+			<input type="submit" value="Send POST Request to Indirect Servlet">
+		</form>
 
-		<!-- This is a way of making a button -->
-		<input type="submit" value="Push Mud Man to the Session">
-	</form>
+		<form method="GET" action="sesserv">
 
-	<form method="GET" action="helpersesserv">
+			<p>Hit the Session Servlet with a GET request!</p>
 
-		<p>Hit the Helper Session Servlet with a GET request!</p>
+			<!-- This is a way of making a button -->
+			<input type="submit" value="Push Mud Man to the Session">
+		</form>
 
-		<!-- This is a way of making a button -->
-		<input type="submit" value="Retrieve Villain the Session">
-	</form>
+		<form method="GET" action="helpersesserv">
 
-	<!-- This request to our server will contain a request BODY (it must be a POST request)  -->
-	<form method="POST" action="sesserv">
+			<p>Hit the Helper Session Servlet with a GET request!</p>
 
-		<p>Hit the Session Servlet with a POST request!</p>
-		
-		<!--  Set up different areas of input for a user to create their own villain and add it to the session -->
-		<input type="text" name="vill-name" placeholder="Enter an evil name"> <br />
-		<input type="text" name="superpower" placeholder="Enter an evil super power"> <br />
-		<input type="text" name="bounty" placeholder="Enter a bounty amount"> <br />
+			<!-- This is a way of making a button -->
+			<input type="submit" value="Retrieve Villain the Session">
+		</form>
 
-		<!-- This is a way of making a button -->
-		<input type="submit" value="Push Villain to the Session">
-	</form>
+		<!-- This request to our server will contain a request BODY (it must be a POST request)  -->
+		<form method="POST" action="sesserv">
 
+			<p>Hit the Session Servlet with a POST request!</p>
 
+			<!--  Set up different areas of input for a user to create their own villain and add it to the session -->
+			<input type="text" name="vill-name" placeholder="Enter an evil name">
+			<br /> <input type="text" name="superpower"
+				placeholder="Enter an evil super power"> <br /> <input
+				type="text" name="bounty" placeholder="Enter a bounty amount">
+			<br />
 
+			<!-- This is a way of making a button -->
+			<input type="submit" value="Push Villain to the Session">
+		</form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	</div>
 </body>
 </html>
