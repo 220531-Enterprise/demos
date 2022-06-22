@@ -11,9 +11,9 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-	
+
 	<dependencies>
-	
+
 		<!-- The javax.servlet dependency is an api that gives us classes and interfaces 
 			that describe and define the contracts between a servlet class and the runtime 
 			environment provided for each instance of a class by a conforming servlet 
@@ -60,23 +60,29 @@
 			<artifactId>mockito-core</artifactId>
 			<version>4.1.0</version>
 		</dependency>
-	
-	
+
+
 	</dependencies>
-	
-	
-	
-	
+
 	<build>
+
+		<finalName>${project.artifactId}</finalName>
+
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.4</version>
+			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.3.1</version>
 			</plugin>
-
 		</plugins>
 	</build>
-	
+
 
 </project>

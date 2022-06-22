@@ -47,6 +47,12 @@ public class EmployeeService {
 		
 	}
 	
+	// this service method returns the PK returned by the DAO
+	public int register(Employee e) {
+		// the dao method returns the PK
+		return edao.insert(e);
+		
+	}
 	
 	
 

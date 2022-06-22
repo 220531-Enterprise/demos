@@ -35,7 +35,15 @@ public class FrontController extends HttpServlet {
 		case "employees":
 			
 			// invoke some functionality from the request helper which would return all employees
+			RequestHelper.processEmployees(request, response);
 			break;
+			
+		case "register":
+			
+			RequestHelper.processRegistration(request, response);
+			
+			break;
+			
 			
 		default:
 			// custom error page
