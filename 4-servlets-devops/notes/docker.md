@@ -12,6 +12,21 @@
 <br>
 <br>
 
+## *How to Run a Dockerized Servlet App*
+1. Inside the root directory of your application run: `mvn clean package` to generate the WAR file.
+
+2. Make sure that your Docker file is located in the root directory (navigate to the repo [here](https://github.com/sophiagavrila/employee-servlet-app) to find it).
+
+3. Build and name the image with the command `docker build -t my-app:auto`.
+> *You can check that it was successfully built by viewing your images with `docker images`*
+
+4. Run the image, creating a container with the following command: `docker run -d -p 8080:8080`
+> *This runs the container in detaiched mode with `-d` and exposes port 8080 from your localhost (or EC2 server) to port 8080 of the container with `-p 8080:8080`*
+
+5. Your app should now be running at  http://localhost:8080/your-app !
+
+<br>
+
 ## *Running* `nsnake` *Container in an EC2* 🐍
 
 1. SSH into an EC2 instance.  You will only need 1 security rule which is supplied to you by default (SSH port 20).
