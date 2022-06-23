@@ -28,7 +28,7 @@ LABEL maintainer="Your Name"
 
 # let's imagine that the WAR file already exists...
 # we want to pass the WAR file to tomcat's webapps directory
-ADD target/FrontController.war /usr/local/tomcat/webapps
+ADD target/your-app.war /usr/local/tomcat/webapps
 
 # The EXPOSE command informs Docker that the container listens on the 
 # specified port at runtime
