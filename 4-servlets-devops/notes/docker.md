@@ -6,10 +6,48 @@
 ## Docker
 *Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly.*
 
-- The first half of this document contains guides on how to run a Docker container in an EC2.
+- The first half of this document contains guides on how to run a Docker container in an EC2 or on your local machine.
 - The second half guides you in how to create both a Tomcat or Postgres container running on your local machine (as long as you have Docker Desktop installed).
 
 <br>
+<br>
+
+## *How to Run a Dockerized Servlet App*
+1. Inside the root directory of your application run: `mvn clean package` to generate the WAR file. This WAR file will be passed to the Docker container when we run it.
+
+2. Make sure that your Docker file is located in the root directory (navigate to the repo [here](https://github.com/sophiagavrila/employee-servlet-app) to find it) or copy the Docker file below:
+
+<br>
+
+```Dockerfile
+# The first line is always FROM - this defines a base image: i need tomcat and java 8
+FROM tomcat:8.0-jre8
+
+# Adding info about who created this image
+LABEL maintainer="Your Name"
+
+# let's imagine that the WAR file already exists...
+# we want to pass the WAR file to tomcat's webapps directory
+ADD target/FrontController.war /usr/local/tomcat/webapps
+
+# The EXPOSE command informs Docker that the container listens on the 
+# specified port at runtime
+EXPOSE 8080
+
+# The CMD instruction specifies what to run when the container is run
+# In our case the tomcat server is started by runnning this shell script
+CMD ["catalina.sh", "run"]
+```
+<br>
+
+3. Build and name the image with the command `docker build -t my-app:auto`.
+> *You can check that it was successfully built by viewing your images with `docker images`*
+
+4. Run the image, creating a container with the following command: `docker run -d -p 8080:8080`
+> *This runs the container in detaiched mode with `-d` and exposes port 8080 from your localhost (or EC2 server) to port 8080 of the container with `-p 8080:8080`*
+
+5. Your app should now be running at  http://localhost:8080/your-app !
+
 <br>
 
 ## *Running* `nsnake` *Container in an EC2* 🐍
@@ -95,9 +133,9 @@ docker run -d --name tomcat --rm -it -p 8080:8080 tomcat
 mvn package
 
 # While still in root directory of project, hand off the war file to tomcat to deploy
-docker cp target/HelloFrontController.war tomcat:/usr/local/tomcat/webapps
+docker cp target/your-app.war tomcat:/usr/local/tomcat/webapps
 
-# You can now see your web app hosted within your container if you go to localhost:8080/HelloFrontController-0.0.1-SNAPSHOT
+# You can now see your web app hosted within your container if you go to localhost:8080/your-app
 ```
 
 <br>
