@@ -4,14 +4,37 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
+  
+  <context-param>
+  	<param-name>contextExample</param-name>
+  	<param-value>Global info accessible to all servlets</param-value>
+  </context-param>
+  
+  
   <servlet>
     <servlet-name>DirServ</servlet-name>
     <servlet-class>com.revature.directservlet.DirectServlet</servlet-class>
+    
+    <load-on-startup>1</load-on-startup>
+    
+    <init-param>
+    	<param-name>configExample</param-name>
+    	<param-value>Info unique to just this Direct Servlet</param-value>
+    </init-param>
+    
+     <init-param>
+    	<param-name>specificInfo</param-name>
+    	<param-value>xyz</param-value>
+    </init-param>
+    
   </servlet>
   <servlet-mapping>
     <servlet-name>DirServ</servlet-name>
     <url-pattern>/dirserv</url-pattern>
   </servlet-mapping>
+  
+  
+  
   <servlet>
     <servlet-name>IndirectServlet</servlet-name>
     <servlet-class>com.revature.indirectservlet.IndirectServlet</servlet-class>

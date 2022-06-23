@@ -20,6 +20,10 @@ public class IndirectServlet extends HttpServlet {
 		response.sendRedirect("http://localhost:8080/hello-servlets/dirserv"); 
 		
 		System.out.println("We triggered() the doGet() method within IndirectServlet and redirected to DirectServlet");
+	
+		System.out.println("Context Example: " + getServletContext().getInitParameter("contextExample"));
+		System.out.println("Config Example: " + getServletConfig().getInitParameter("contextExample"));
+	
 	}
 	
 

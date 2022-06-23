@@ -23,6 +23,14 @@ public class DirectServlet extends HttpServlet { // HttpServlet extends GenericS
 	// I want to handle a GET request from a client and return an html page
 	// "generated on the fly"
 	
+	
+	@Override
+	public void init() {
+		
+		System.out.println("DirServ has been initialized by the Tomcat Web Container");
+		
+	}
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
@@ -35,6 +43,8 @@ public class DirectServlet extends HttpServlet { // HttpServlet extends GenericS
 		PrintWriter out = response.getWriter();
 		out.println("<html><body><h2>The Servlet is talking directly to the client!</h2></body></html>");
 
+		System.out.println("Context Example: " + getServletContext().getInitParameter("contextExample"));
+		System.out.println("Config Example: " + getServletConfig().getInitParameter("configExample"));
 	}
 	
 	
