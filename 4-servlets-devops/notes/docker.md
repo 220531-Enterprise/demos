@@ -13,9 +13,32 @@
 <br>
 
 ## *How to Run a Dockerized Servlet App*
-1. Inside the root directory of your application run: `mvn clean package` to generate the WAR file.
+1. Inside the root directory of your application run: `mvn clean package` to generate the WAR file. This WAR file will be passed to the Docker container when we run it.
 
-2. Make sure that your Docker file is located in the root directory (navigate to the repo [here](https://github.com/sophiagavrila/employee-servlet-app) to find it).
+2. Make sure that your Docker file is located in the root directory (navigate to the repo [here](https://github.com/sophiagavrila/employee-servlet-app) to find it) or copy the Docker file below:
+
+<br>
+
+```Dockerfile
+# The first line is always FROM - this defines a base image: i need tomcat and java 8
+FROM tomcat:8.0-jre8
+
+# Adding info about who created this image
+LABEL maintainer="Your Name"
+
+# let's imagine that the WAR file already exists...
+# we want to pass the WAR file to tomcat's webapps directory
+ADD target/FrontController.war /usr/local/tomcat/webapps
+
+# The EXPOSE command informs Docker that the container listens on the 
+# specified port at runtime
+EXPOSE 8080
+
+# The CMD instruction specifies what to run when the container is run
+# In our case the tomcat server is started by runnning this shell script
+CMD ["catalina.sh", "run"]
+```
+<br>
 
 3. Build and name the image with the command `docker build -t my-app:auto`.
 > *You can check that it was successfully built by viewing your images with `docker images`*
