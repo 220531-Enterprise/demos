@@ -15,7 +15,7 @@ You should research and be able to answer the following questions at the end of 
 <br>
 
 ## `Study Questions`
-> Go over these questions to prepare for Week 4 QC (Monday June 20th)
+> Go over these questions to prepare for QC (Monday June 27th)
 <br>
 
 ## SQL Questions
