@@ -29,7 +29,7 @@
 		<property name="hibernate.default_schema">sophiag</property>
 
 		<!-- CREATE will drop any existing tables and RE-CREATE our tables -->
-		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 
 		<!-- UPDATE: wouldn't delete anything, but would add tables or object -->
 		<!-- VALIDATE: best for production checks to make sure that everything 
