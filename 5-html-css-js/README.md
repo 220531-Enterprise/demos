@@ -92,8 +92,11 @@ div { property: value}
 
 18. Describe the Bootstrap grid system
     + The Bootstrap grid is divided into 12 columns. You wrap the columns in a `.row` which is in a `.container` or `.container-flex`. The columns are responsive - there are classes for different screen sizes which collapse on smaller windows
+    
 <br><br>
+
 ## JavaScript Language Fundamentals
+Here are [more advanced JavaScript questions that may be asked on next week's QC](https://github.com/220531-Enterprise/demos/blob/main/5-html-css-js/js-qc-questions.md).
 
 1.  What is JavaScript? What do we use it for?
 
