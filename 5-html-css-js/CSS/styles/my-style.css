@@ -1,0 +1,12 @@
+@import url('for-import.css');
+
+body {
+    background-color: rgb(249, 66, 255);
+}
+
+.my-special-class { /* This will overwrrite the above color rule because its more specific*/
+    background-color: coral;
+    /* This got overridden by the internal styling */
+
+}
+

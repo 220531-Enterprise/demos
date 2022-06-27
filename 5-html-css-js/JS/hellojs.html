@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello JavaScript</title>
+</head>
+<body>
+
+    <h1>JavaScript Example</h1>
+
+    <p>Some repetative statement</p>
+
+    <script>
+        /**
+         * What is a scripting language?
+         * A snippet of code that automates some functionality
+         * */
+        // Here's a JS comment. 
+
+        /**
+         * Here's a multi-line comment
+         * 
+         * */
+
+        // 1. Grap the element whose inner HTML we want to replicate
+        let statement = document.querySelector('p').innerHTML; // querySelector() reutrns the first p tag found
+
+        // 2. open a for loop to loop 50 times
+        for (let i=0; i<50; i++) {
+             // 3. in each loop, write the statement to the document object
+             document.write(statement);
+             document.write('<br />');
+
+        }
+
+        console.log("look at this log statment!");
+
+        console.warn("Pineapples do NOT go on pizza");
+        console.error('something has gon horribly wrong');
+        
+    </script>
+
+
+</body>
+</html>

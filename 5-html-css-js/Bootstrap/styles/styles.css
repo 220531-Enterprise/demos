@@ -1,0 +1,18 @@
+.btn {
+
+    background-color: orangered;
+    color: white;
+
+}
+
+.btn:hover {
+
+    background-color: white;
+    color:orangered
+
+}
+
+.jumbotron {
+    background-color: bisque;
+}
+

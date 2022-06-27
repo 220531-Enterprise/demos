@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to CSS</title>
+
+    <!--
+        There are 3 ways of styling with CSS:
+        1. Inline Styling (not preferred because it's not maintanable as our code base grows)
+
+        2. Internal Styling - You supply the CSS styling rules in between the <style> tags within the <head> of an html document.
+
+        3. External Styling - You supply CSS rules in an external document which you link to
+        within the html document that's being styled.
+    -->
+
+    <link rel="stylesheet" href="styles/my-style.css">
+    <link rel="stylesheet" href="styles/specific-stylesheet.css">
+
+    <!-- (Shoutout TeeJae) The emmet shortcut for the CSS link tag is "link:css"
+-->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        /* If we want to change the font of EVERY div on the page */
+
+        body { /* This is an element selector */
+            font-family: 'Indie Flower', cursive;
+        }
+
+        #my-special-div {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding-left: 30%;
+            border: 2px aqua;
+            color: blue;
+            background: burlywood;
+        }
+
+        .my-special-class {
+
+            margin-top: 20%;
+            border: dashed rebeccapurple;
+            border-radius: 20px;
+            line-height: 18px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <divid="inline-stlying-example">
+
+        <h4>CSS rules are deifned by key/value pairs, separated by a colon :</h4>
+        <p style="background-color: black; color: rgb(57, 253, 243)">This is an example of inline styling</p>
+
+        <!-- Spans are inline structural tags that define 1 element-->
+        <span style="background-color: aquamarine; color: darkblue">Some content</span>
+
+    </div>
+
+    <div id="iternal-styling-example">
+
+        <h2>Selectors</h2>
+        <h3>Element Selectors, Class Selectors ".", &amp; Id selector "#"</h3>
+
+        <div id="my-special-div">
+            <p>Lorem, ipsum dolor sit ameelit. Ipsam, atque. Saepe dolor ullam ea consequ</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="my-special-class">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga repellendus quisquam quis.</p>
+        </div>
+
+        <div class="my-special-class">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, architecto.</p>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
