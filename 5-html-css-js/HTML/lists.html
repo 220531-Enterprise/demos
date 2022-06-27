@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists 101</title>
+</head>
+<body>
+    
+          <!--
+        HTML Lists
+            There are 3 different types of lists to choose from in HTML:
+
+            - Ordered Lists <ol>
+                + lists where each item <li> is numbered
+                    + 1, 2, 3
+                    + A, B, C
+                    + I, II, II
+                    + i, ii, iii
+
+            - Unordered Lists <ul>
+                + lists where each item <li> has some bullet point
+
+            - Definition Lists
+                + lists made up of terms <dt> and their definitions <dd>
+    -->
+
+    <div id="oat-milk-recipe">
+
+        <h1>Homemade Oat Milk</h1>
+        <h2>Ingredients</h2>
+
+        <!-- Inline styling: setting the style attrivute of the list element -->
+        <ul style="list-style-type:square">
+            <li>1 cup of oats</li>
+            <li>4 cups of Water</li>
+            <li>1-2 tsp of Maple syrup</li>
+            <li>1/4 tsp of salt</li>
+        </ul>
+
+        <ol type="I">
+            <li>Add all the ingredients to a blender</li>
+                <ol type="a">    
+                    <li>Plug blender in</li>
+                    <li>Turn blender on high speed setting</li>
+                </ol>
+            <li>Blend on high for about 2 minutes</li>
+            <li>Store in fridge for up to 5 days</li>
+            <blockquote>
+                If you let it sit for more than  days, it will go <em>bad</em>.
+            </blockquote>
+        </ol>
+
+        <!-- Defintiton List - dl element-->
+        <dl>
+            <dt>HyperText Markup Language</dt> <!-- Key -->
+            <dd>A markup language for structuring the content of a webpage. NOT a programming language.</dd> <!-- Value -->
+
+            <dt>Cascading Style Sheets</dt> <!-- Key -->
+            <dd>A rule-based styling langauge for describing the presnetaiton of a document.</dd> <!-- Value -->
+        </dl>
+
+        <ol type="1" reversed start="10">
+
+            <li>Thing 1</li>
+            <li>Thing 2</li>
+            <li>Thing 3</li>
+
+        </ol>
+
+    </div>
+
+
+</body>
+</html>

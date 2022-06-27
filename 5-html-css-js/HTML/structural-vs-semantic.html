@@ -1,0 +1,137 @@
+<!DOCTYPE html><!-- DOCTYPE declares the languaged of the document HTML5  -->
+<html lang="en">
+<!-- This is where your HTML code begins-->
+
+<head>
+    <!-- THis contains meta data - data ABOUT the document like, name of the page
+    , where the style sheet can be found (if extrernally linked) -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics: Structural vs. Semantic Tags</title>
+
+</head>
+
+<body>
+
+    <!-- The body holds all of the info /content displayed to the user when rendered by the browser -->
+
+    <h1>Welcome to my page!!</h1>
+
+    <!--
+            HTML tags/elements
+            Used to indicate how content should be displayed...
+            Usually they require an opening and a closing tag.  Those that do NOT require a closing tag
+            are called self-closing tags.
+
+                <p> paragraph
+                <h#>    headings (range from 1-6, 1 being the largest)
+                <div>   division/divider; used to group related elements together
+                    ** The <span> tag is much like the <div> element, but <div> is a block-level element and <span> is an inline element.
+                <img>   image (self-closing)
+                <a>     anchor; used to create links to other webpages, or to sections of the current page
+                <br>    line break (self-closing)
+                <hr>    horizontal rule
+                <input> creates a field for user input or some sort of [text, checkbox, etc.] (self-closing)
+        -->
+    <p>this text might be introducing something about the page</p>
+
+    <br /> <!-- We typically use the bre tag to add whitespace -->
+
+    <p>
+        Let's
+
+        see
+
+        if HTML care's about whitespace
+
+    </p>
+
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+
+    <br />
+    <br />
+
+    <p>4 &lt; 5</p> <!-- escape sequence to allow for the < sign -->
+    <p>HTML &amp; CSS</p>
+    <p>Here is&nbsp;text</p>
+
+     <!--
+            Escape characters
+                There are some characters that are used in and reserved
+                for HTML code. If you want to use them in your content
+                then you need to use their escape character equivalents.
+                <       -   Less-than       &lt;        &#60;
+                >       -   Greater-than    &gt;        &#61;    
+                &       -   Ampersand       &amp;       
+                ""      -   Quotations      &quot;
+                        -   Space           &nbsp;
+        -->
+
+    <h1>Generic (Structural) Markup Tags</h1>
+    <p>These are elements used to simply present the content that's enclosed</p>
+
+        <!--
+        Structural Markup tags (not all-inclusive)
+        <h#>        headings
+        <p>         paragraphs
+        <b>         bold
+        <i>         italic
+        <sup>       superscript
+        <sub>       subscript
+        <br>        line break
+        <ol>        ordered lists
+        <ul>        unordered lists
+        <li>        list items
+    -->
+
+    <h1>Semantic Markup</h1>
+    <p>Semantic tags are used to provide extra info about the content that's enclosed</p>
+
+
+    <div class="semantic-101">
+
+
+        <p>Steve <em>wants</em> chocolate</p>
+        <del>This is deleted text</del>
+
+        <br>
+
+        <p>What is <abbr title="HyperText Markup Language">HTML</abbr></p>
+        <p>What is <abbr title="Cascading Style Sheets">CSS</abbr></p>
+
+    </div>
+
+    <footer>
+        <div class="contact-info">
+
+            <address>
+                <p>
+    
+                    <a href="mailto:psherman@mail.com">Email me!</a>
+    
+                </p>
+    
+                <p>
+                    42 Wallaby Way, Sydney, Australia.
+                </p>
+    
+            </address>
+        </div>
+    </footer>
+
+    <article></article>
+
+    <div id="movie-stuff">
+
+        <p>From the Acedemy Award winning film <em>Forest Gump</em>, the famous quote from Tom Hanks: </p>
+
+        <blockquote>
+            Mama always said <q>Life is like a box of chocolates....</q>
+        </blockquote>
+
+    </div>
+
+</body>
+
+</html>
