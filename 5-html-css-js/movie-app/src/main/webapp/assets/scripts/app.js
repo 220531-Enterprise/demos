@@ -75,7 +75,6 @@ const confirmAddMovieHandler = () => {
 
     movies.push(newMovie);
     console.log(movies);
-
     
     toggleMovieModal(); 
     clearMovieInput();
@@ -128,7 +127,6 @@ function getMovies() {
       if (!response.ok) {
         throw Error("ERROR");
       }
-
       return response.json();
     })
     .then(function (data) {
@@ -140,18 +138,11 @@ function getMovies() {
           image: obj.imageUrl,
           rating: obj.rating,
         };
-
         console.log(newMovie);
-
         movies.push(newMovie);
-
         renderNewMovieElement(newMovie.id, newMovie.title, newMovie.image, newMovie.rating)
         updateUI(); 
-
-       
       });
-
-
     })
     .catch((error) => {
       console.log(error);
