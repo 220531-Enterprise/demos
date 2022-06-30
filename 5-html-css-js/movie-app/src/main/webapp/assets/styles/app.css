@@ -136,7 +136,7 @@
     border-radius: 10px 10px 0 0;
   }
   
-  .modal .modal__content {
+  .modal .modal__content .login_input {
     padding: 1rem;
   }
   

@@ -22,6 +22,18 @@ public class FrontController extends HttpServlet {
 			RequestHelper.addMovie(request, response);
 			break;
 			
+		case "login":
+			System.out.println("Request helper for login triggered");
+			// invoke some function from the RequestHelper
+			RequestHelper.processLogin(request, response);
+			break;
+			
+		case "getmovies":
+			System.out.println("Request helper for getmovies triggered");
+			// invoke some function from the RequestHelper
+			RequestHelper.getFavoriteMovies(request, response);
+			break;
+			
 		default:
 			// custom error page
 			break;

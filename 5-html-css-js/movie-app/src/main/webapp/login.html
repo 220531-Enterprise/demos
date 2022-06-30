@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Favorite Movies</title>
+
+    <link rel="stylesheet" href="assets/styles/app.css" />
+    <script src="assets/scripts/login.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Favorite Movies</h1>
+    </header>
+
+    <!-- This is the section we will select when Rendering Movie Items on the Screen (9) -->
+    <main>
+        <section id="entry-text" class="card">
+            <p>Login below!</p> <!-- Hide if we have movies -->
+            <div class="modal_content login_input">
+                <label for="username">Username</label>
+                <input type="text" id="username" />
+                <label for="password">Password</label>
+                <input type="password" id="password" />
+                <div class="modal__actions">
+                    <button id="login-btn" class="btn btn--success">Log in</button>
+                </div>
+            </div>
+            <div id="warningText">
+
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
