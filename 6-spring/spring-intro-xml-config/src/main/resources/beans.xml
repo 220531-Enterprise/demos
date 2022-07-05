@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
+	Application Context definition document
     The beans.xml (default name; not required to be called this) is the registry file which contains our
     bean definitions that will tell Spring what classes we want it to manage for us.
     
@@ -18,9 +19,22 @@
 		
 		<!-- Here we'll declare our objects (BaseballCoach) and how to construct on
 		(by injecting a MotivationService Object) -->
-		<bean>   </bean>
-		
+		<bean id="myCoach" class="com.revature.models.BaseballCoach" scope="prototype">  
+	<!--  The non-singleton, prototype scope of bean deployment results 
+    in the creation of a new bean instance every time a request for that 
+    specific bean is made  https://blog.marcnuri.com/spring-bean-scopes-guide-to-understand-the-different-bean-scopes -->
+				<!-- CONSTRUCTOR BASED DEPENDENCY INJECTION -->
+				<constructor-arg ref="myMotivationService" />
+				
+		 </bean>
 						
-						
+		<!-- The default scope is SINGLETON -->
+		<bean id="myMotivationService" class="com.revature.services.MotivationService"></bean>
 						
 </beans>
+
+
+
+
+
+
