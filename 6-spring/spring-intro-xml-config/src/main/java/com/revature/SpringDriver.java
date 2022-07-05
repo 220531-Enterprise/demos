@@ -4,9 +4,8 @@ import java.util.Arrays;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.revature.models.BaseballCoach;
 import com.revature.models.Coach;
-import com.revature.services.MotivationService;
+import com.revature.models.FootballCoach;
 
 public class SpringDriver {
 	
@@ -36,6 +35,14 @@ public class SpringDriver {
 			Coach assistantCoach = container.getBean("myCoach", Coach.class);
 			System.out.println("Is the assistant coach the same obj as the OG coach? : " + (assistantCoach == coach));
 			System.out.println("Does the assistant coach share the same MotivationService obj as the OG coach? " + (assistantCoach.getMotivationService() == coach.getMotivationService()));
+			
+			// ----------------------------------------------------------
+			
+            FootballCoach footballCoach = container.getBean("myFootballCoach", FootballCoach.class);
+            System.out.println(footballCoach.getDailyWorkout());
+            System.out.println(footballCoach.getMotivation());
+            System.out.println(footballCoach.getTeamName());
+            System.out.println(footballCoach.getEmail());
 			
 			// -----------------------------------------------------------
 			

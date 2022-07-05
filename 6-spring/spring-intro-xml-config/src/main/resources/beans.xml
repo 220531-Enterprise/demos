@@ -31,6 +31,20 @@
 		<!-- The default scope is SINGLETON -->
 		<bean id="myMotivationService" class="com.revature.services.MotivationService"></bean>
 						
+		<bean id="myFootballCoach" class="com.revature.models.FootballCoach" init-method="customInit" destroy-method="customDestroy">
+		
+			<!--  Setter based dependency injection -->
+			<property name="motivationService" ref="myMotivationService"/>
+			
+			<!--  field/property value injection -->
+			<property name="teamName" value="The Jets"/>
+			<property name="email" value="${coach.email}"/>
+			
+		</bean>
+		
+<!-- 		org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0 -->
+		<context:property-placeholder location="app.properties"/>
+						
 </beans>
 
 

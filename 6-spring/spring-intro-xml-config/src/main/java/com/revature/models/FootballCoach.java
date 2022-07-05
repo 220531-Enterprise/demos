@@ -11,10 +11,15 @@ public class FootballCoach implements Coach{
 	public FootballCoach() {
 		System.out.println("FootballCoach no-args constructor invoked!");
 	}
-
-	// Setter Injection is an alternative to COnstructor injection
-	// in Spring it's recommended to use setter injection with OPTIONAL dependencies
-
+	
+	private void customInit() {
+		System.out.println("FootballCoach.customInit() method invoked!");
+	}
+	
+	private void customDestroy() {
+		System.out.println("FootballCoach.customDestroy() method invoked!");
+	}
+	
 	@Override
 	public String getMotivation() {
 		return "The baseball coach says: " + motivationService.getMotivation();
