@@ -58,7 +58,6 @@ public class RequestHelper {
 				params.addProperty("status", "login success");
 				String json = gson.toJson(user);			
 
-				pw = response.getWriter();
 				pw.write(json);
 
 			} else {
