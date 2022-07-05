@@ -114,7 +114,7 @@ A bean factory is just that, a implementation of the factory design pattern whic
 17) a custom destroy-method will be invoked to clean up any custom configuration.
 
     
-![Spring Bean Lifecycle](https://s3.amazonaws.com/revature-note-assets/spring-bean-lifecycle.png "Spring Bean Lifecycle")
+![Spring Bean Lifecycle](https://media.geeksforgeeks.org/wp-content/uploads/20200428011831/Bean-Life-Cycle-Process-flow3.png "Spring Bean Lifecycle")
 
 
 # `ApplicationContext` vs `BeanFactory`
