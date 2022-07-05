@@ -52,7 +52,7 @@ Dependency injection is a technique whereby one object supplies the dependencies
 
 # Spring Framework Modules
 ---
-![Spring Framework Modules and Sub-modules](https://s3.amazonaws.com/revature-note-assets/spring-overview.png "Spring Framework Modules and Sub-modules")
+![Spring Framework Modules and Sub-modules](https://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/html/images/spring-overview.png "Spring Framework Modules and Sub-modules")
 ### Core Container
 - Factory for creating beans
 - Manages bean dependencies
