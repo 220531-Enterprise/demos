@@ -1,33 +1,27 @@
 server:
-  port: 5000
+  port: 5000 # ElasticBeanstalk expects for Java apps to be deployed on port 5000 (for some reason)
+
 spring:
   application:
     name: spring-boot-poc
-  datasource:
-    driver-class-name: org.H2.Driver
-    password: password
-    url: jdbc:h2:mem:testdb
-    username: sa
   h2:
     console:
       enabled: true
       path: /h2
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
     hibernate:
       ddl-auto: create
-    show-sql: true
 
- 
-# .properties file version of the above .yml configuration
-#-------------------------------------------------------------
-# spring.application.name=spring-boot-poc
-# spring.h2.console.enabled=true
-# spring.h2.console.path=/h2
-# spring.datasource.url=jdbc:h2:mem:testdb
-# spring.datasource.driver-class-name:org.H2.Driver
-# spring.datasource.username=sa
-# spring.datasource.password=password
-# spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-# spring.jpa.show-sql=true
-# spring.jpa.hibernate.ddl-auto=create
+# Expose all Spring Boot Actuator endpoints (health metrics)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
