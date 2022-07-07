@@ -19,7 +19,7 @@ import com.revature.util.JwtTokenManager;
  * when logging in from the front end to verify whether they are 
  * authenticated or not.
  * 
- * IF their username & password indeed exists in the DB, we 
+ * If their username & password indeed exists in the DB, we 
  * will send back a server-generated JWT token that they can use 
  * to continue accessing our server.
  */
@@ -60,19 +60,5 @@ public class AuthController {
 			response.setStatus(401); // 401 is an UNAUTHORIZED status
 			return null;
 		}
-		
-	}
-	
-	
-
-	
-	
+	}	
 }
-
-
-
-
-
-
-
-

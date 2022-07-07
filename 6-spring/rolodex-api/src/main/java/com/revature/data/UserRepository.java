@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.revature.models.User;
 
-@Repository // Stereotype Annotation for this component 
+@Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
 
 	// .save(), .findAll(), .update(), .deleteById() are already created
@@ -18,9 +18,9 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	
 	Optional<User> findByUsername(String username);
 	
-	List<User> findByOrderByLastName(); // reutrns all the users orderd by last name
+	List<User> findByOrderByLastName(); // returns all the users ordered by last name
 	
 	// custom query
 	@Query("From User WHERE email LIKE %:pattern") // the : is a placeholder for the argument
-	List<User> findByEmailContains(String pattern); // johnsmi // returns johnsmith@gmail.com
+	List<User> findByEmailContains(String pattern); // johnsmi -> returns johnsmith@gmail.com
 }

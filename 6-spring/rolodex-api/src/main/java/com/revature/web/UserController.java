@@ -31,34 +31,26 @@ public class UserController {
 		this.userv = userv;
 	}
 	
-	// get all
-	
-	@GetMapping
+	@GetMapping // return all users by sending a GET request to http://localhost:5000/api/users
 	public ResponseEntity<Set<User>> getAll() {
-		return ResponseEntity.ok(userv.findAll());
-		
+		return ResponseEntity.ok(userv.findAll());	
 	}
 	
-	// add a User
-	@PostMapping("/add")
+	@PostMapping("/add") // http://localhost:5000/api/users/add
 	public ResponseEntity<User> addUser(@Valid @RequestBody User u) {
 		return  ResponseEntity.ok(userv.add(u));
 	}
 
-	// Find a user by their id
 	@GetMapping("/{id}") // allows the client to send the request http://localhost:5000/api/users/2
 	public ResponseEntity<User> findUserById(@PathVariable("id") int id) {
-	
 		return ResponseEntity.ok(userv.getById(id));
 	}
 	
-	@GetMapping("/find/{username}") // allows the client to send the request http://localhost:5000/api/users/2
+	@GetMapping("/find/{username}") // allows the client to send the request http://localhost:5000/api/users/thehulk
 	public ResponseEntity<User> findUserByUsername(@PathVariable("username") String username) {
-	
 		return ResponseEntity.ok(userv.getByUsername(username));
 	}
 	
-	// Delete a user when they delete request to the url/id
 	@DeleteMapping("/{id}")
 	public void removeUser(@PathVariable("id") int id) {
 		userv.remove(id);

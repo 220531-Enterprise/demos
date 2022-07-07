@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.revature.models.Address;
 import com.revature.models.User;
 
-@Repository // Sterotype Annotation for this component 
+@Repository
 public interface AddressRepository extends JpaRepository<Address, Integer>{
 
 }

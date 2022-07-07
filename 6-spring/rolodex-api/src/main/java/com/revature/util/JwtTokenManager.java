@@ -15,7 +15,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
-@Component // we declare it as a Spring Bean (object mamanged by the Spring IoC container)
+@Component // we declare it as a Spring Bean (object managed by the Spring IoC container)
 public class JwtTokenManager {
 	
 	private final Key key; // from java.security
