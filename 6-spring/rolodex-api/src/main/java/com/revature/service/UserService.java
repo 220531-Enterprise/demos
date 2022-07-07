@@ -21,7 +21,7 @@ import com.revature.models.User;
  * This Service Component is responsible for calling all the necessary repository
  * methods.
  * 
- * We will inject this Service Component into the Controller
+ * We will inject this Service Component into the AuthController & UserController
  */
 @Service
 public class UserService {
@@ -37,14 +37,13 @@ public class UserService {
 		this.addressRepo = addressRepo;
 	}
 
-	// the AuthController will pass the creds object to this Service method
+	// the AuthController will pass the creds DTO object to this method
 	public User authenticate(Credentials creds) {
 
 		User userInDb = userRepo.findUserByUsernameAndPassword(creds.getUsername(), creds.getPassword())
-				.orElseThrow(AuthenticationException::new); // if it Sreturns null, throw custom exception
+				.orElseThrow(AuthenticationException::new); // if it returns null, throw custom exception
 
 		return userInDb;
-
 	}
 
 	@Transactional(readOnly = true)
@@ -58,13 +57,14 @@ public class UserService {
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	public User add(User u) {
 
-		// check if the user object being added owns any addresses (u.getAddresses !=
-		// null)
+		/**
+		 *  check if the user object being added owns any addresses 
+		 *  (u.getAddresses != null). If it does, 
+		 *  iterate over them and add each Address object
+		 */
 		if (u.getAddresses() != null) {
 			u.getAddresses().forEach(address -> addressRepo.save(address));
 		}
-
-		// if it isn't null, iterate over them and add each Address object
 		return userRepo.save(u);
 	}
 
@@ -76,8 +76,6 @@ public class UserService {
 	@Transactional(readOnly = true)
 	public User getByUsername(String username) {
 
-		// set up custom exception handling in the case that this optional returns a
-		// null user
 		return userRepo.findByUsername(username) // in the case that no User object can be returned, throw an exception
 				.orElseThrow(() -> new UserNotFoundException("No user found with username " + username));
 	}

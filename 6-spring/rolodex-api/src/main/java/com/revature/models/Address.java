@@ -44,11 +44,11 @@ public class Address {
 	private String city; // Trenton
 	private String zip; // 22112-223
 	
-	// declare the porety of the owner of the realation ship that this is mapped to
+	// declare the property of the owner of the relationship that this is mapped to (addresses in the User.java class)
 	@ManyToMany(mappedBy="addresses")
 	private @NonNull Set<User> owners; // list of all users who are registered at this address 
 
-	// constructor with no ID and no owners set
+	// constructor with no id and no owners field
 	public Address(String street, String secondary, @Length(min = 2, max = 2) String state, String city, String zip) {
 		super();
 		this.street = street;

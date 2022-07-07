@@ -25,38 +25,39 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 @Data @AllArgsConstructor @NoArgsConstructor
-@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class User {
 
 	@Id
-	@Column(name="user_id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "user_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@Length(min=2)
+
+	@Length(min = 2)
 	private String firstName;
 	private String lastName;
 
 	@NotBlank
-	@Length(min=2)
-	@Pattern(regexp="[a-zA-Z][a-zA-Z0-9]*") // username must be alphanumeric
+	@Length(min = 2)
+	@Pattern(regexp = "[a-zA-Z][a-zA-Z0-9]*") // username must be alphanumeric
 	private String username;
-	
+
 	@NotBlank
 	private String password;
-	
+
 	@Email // checks for an @ symbol
 	private String email;
-	
-	// establish a ManyToMany relationship between address and User
-	// 1 user can have MANY differnt addresses
-	// 1 address may have many users associates with it
+
+	/**
+	 * establish a ManyToMany relationship between Address and User many users may
+	 * have many addresses and vice versa
+	 */
 	@ManyToMany
-	@JoinTable(name="users_address",
-	joinColumns = @JoinColumn(name="user_id"), 
-	inverseJoinColumns=@JoinColumn(name="address_id"))
+	@JoinTable(name = "users_address", 
+	joinColumns = @JoinColumn(name = "user_id"), 
+	inverseJoinColumns = @JoinColumn(name = "address_id"))
 	private Set<Address> addresses;
 
 	// generate a constructor with no addresses and no id
@@ -70,8 +71,9 @@ public class User {
 		this.password = password;
 		this.email = email;
 	}
-	
-	/** Regarding the validation constraints on some of the fields
+
+	/**
+	 * Regarding the validation constraints on some of the fields
 	 * 
 	 * @NotNull: a constrained CharSequence, Collection, Map, or Array is valid as
 	 *           long as it's not null, but it can be empty.
@@ -80,23 +82,5 @@ public class User {
 	 * @NotBlank: a constrained String is valid as long as it's not null, and the
 	 *            trimmed length is greater than zero.
 	 */
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
