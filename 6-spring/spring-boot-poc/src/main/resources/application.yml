@@ -65,3 +65,17 @@ management:
 
  
 
+=======
+# .properties file version of the above .yml configuration
+#-------------------------------------------------------------
+# spring.application.name=spring-boot-poc
+# spring.h2.console.enabled=true
+# spring.h2.console.path=/h2
+# spring.datasource.url=jdbc:h2:mem:testdb
+# spring.datasource.driver-class-name:org.h2.Driver
+# spring.datasource.username=sa
+# spring.datasource.password=password
+# spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+# spring.jpa.show-sql=true
+# spring.jpa.hibernate.ddl-auto=create
+>>>>>>> b08fe0ca9f37e71f6ab7b88cdfc3585d92d3b6f8
