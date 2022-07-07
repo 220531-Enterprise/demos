@@ -37,8 +37,6 @@ public class AuthController {
 		this.userService = userService;
 		this.tokenManager = tokenManager;
 	}
-	
-	
 
 	// 1. authenticate the user when they sends a POST request to http://localhost:5000/api/login
 	@PostMapping
