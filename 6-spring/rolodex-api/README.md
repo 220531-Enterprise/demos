@@ -28,7 +28,7 @@ This functional code allows you to do the following:
         }
     ]
 }
-```json
+```
 
 - Once you add a user, you can login by sending a `POST` request to the endpoint `http://localhost:5000/api/login` with the following body in the request:
 
