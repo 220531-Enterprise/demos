@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,7 +42,7 @@ public class AuthController {
 
 	// 1. authenticate the user when they sends a POST request to http://localhost:5000/api/login
 	@PostMapping
-	public User login(Credentials creds, HttpServletResponse response) {
+	public User login(@RequestBody Credentials creds, HttpServletResponse response) {
 		
 		User user = userService.authenticate(creds);
 		
