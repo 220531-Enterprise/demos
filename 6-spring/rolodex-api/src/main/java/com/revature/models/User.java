@@ -52,8 +52,7 @@ public class User {
 	
 	// establish a ManyToMany relationship between address and User
 	// 1 user can have MANY differnt addresses
-	// 1 address may jave many users associates with it
-	
+	// 1 address may have many users associates with it
 	@ManyToMany
 	@JoinTable(name="users_address",
 	joinColumns = @JoinColumn(name="user_id"), 
