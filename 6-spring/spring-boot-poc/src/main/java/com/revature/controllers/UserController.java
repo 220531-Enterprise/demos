@@ -57,7 +57,7 @@ public class UserController {
 	 * 
 	 * https://stackoverflow.com/questions/26549379/when-use-responseentityt-and-restcontroller-for-spring-restful-applications#:~:text=266,headers%2C%20and%20body.
 	 */
-	@GetMapping("/{id}")
+	@GetMapping("/{id}") // Http://localhost:5000/users/32
 	public ResponseEntity<User> findUserById(@PathVariable("id") int id) {
 		
 		Optional<User> user = userService.getById(id);
@@ -72,7 +72,7 @@ public class UserController {
 	}
 	
 	
-	// register a USER
+	// register a USER /users
 	@PostMapping
 	public User registerNewUser(@Valid @RequestBody User newUser) {
 		return userService.processRegister(newUser);
@@ -82,22 +82,5 @@ public class UserController {
 	public User updateUser(@Valid @RequestBody User updatedUser) {	
 		return userService.updateUser(updatedUser);	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
