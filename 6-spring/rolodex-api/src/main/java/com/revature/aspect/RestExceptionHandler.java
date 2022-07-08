@@ -32,6 +32,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 		// we use the apiError obj passed through to scrape the status and body of the apiError
 		return ResponseEntity.status(apiError.getStatus()).body(apiError);
 	}
+	
 	/** 
 	 * Intercept exceptions that are caused by validation issues...
 	 * 
