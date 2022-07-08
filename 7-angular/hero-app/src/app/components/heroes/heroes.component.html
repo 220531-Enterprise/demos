@@ -1,1 +1,33 @@
-<h2>{{ hero }}</h2>
+
+<!-- We use Pipes in Angular to formate dates, currency, and other data-->
+<ul class="heroes">
+
+  <li *ngFor="let hero of heroes">
+    <button type="button" (click)="onSelect(hero)">
+      <span class="badge">{{ hero.id }}</span>
+      <span class="name">{{ hero.name }}</span>
+    </button>
+  </li>
+
+</ul>
+
+<!-- IF there is a selected hero, show its info below-->
+
+
+<div *ngIf="selectedHero">
+
+  <h2>{{selectedHero.name | uppercase}} Details:</h2>
+  <div>id: {{ selectedHero.id }}</div>
+
+  <div>
+
+    <label for="hero-name">Hero name:</label>
+    <!--2 way data binding, must be imported in app.modulde.ts-->
+    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+
+  </div>
+
+  <!--Tour -->
+
+
+</div>
