@@ -11,9 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+/**
+ * The purpose of this class is to intercept every request made to the server
+ * and append headers to the response to avoid CORS issues.
+ * 
+ * The doFilterInteral() method will fire once per every request made to this
+ * API's Controllers.
+ */
 @Component
-@WebFilter("/*") // the functionality in doFilterInteral will fire once per every request made to
-					// this API
+@WebFilter("/*")
 public class CorsFilter extends OncePerRequestFilter {
 
 	@Override
