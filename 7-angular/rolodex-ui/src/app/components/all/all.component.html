@@ -6,10 +6,27 @@
 
   <div class="card-body">
 
-    <div class="list-group">
+    <ul class="list-group" *ngFor="let u of users">
 
     <!-- Display each user's id, firstname, lastname...-->
+        <li class="list-group-item">Id: {{u.id}}</li>
+        <li class="list-group-item">First Name {{u.firstName}}</li>
+        <li class="list-group-item">Last Name {{u.lastName}}</li>
+        <li class="list-group-item">Username {{u.username}}</li>
+        <li class="list-group-item">Email {{u.email}}</li>
+
+    </ul>
+
+    <!-- IF there are no users, display the client message -->
+    <div *ngIf="users.length == 0">
+
+        {{clientMessage.message}}
 
     </div>
+
+    <div>
+      <button class="btn btn-secondary btn-center" (click)="findAllUsers()">Fetch Users!</button>
+    </div>
+
   </div>
 </div>

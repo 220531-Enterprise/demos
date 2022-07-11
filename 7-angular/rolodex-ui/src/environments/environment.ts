@@ -6,6 +6,9 @@ export const environment = {
   production: false
 };
 
+// this url represents where our Spring Boot can recieve HTTP Requests
+export const url = `http://localhost:5000/api`;
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
