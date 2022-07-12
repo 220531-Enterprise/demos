@@ -1,0 +1,29 @@
+<div>
+
+  <div>
+    <h2 class="card-header text-center">{{title}}</h2>
+  </div>
+
+  <div class="card-body">
+
+    <h5 class="card-title">Enter the ID of the User you want to find:</h5>
+
+    <!-- Input area for the user to type an ID-->
+    <div class="input-group flex-nowrap">
+
+      <span class="input-group-text" id="addonn-wrapping">Id</span>
+
+      <input [(ngModel)]="userId" name="userId" type="number" class="form-control" placeholder="Enter User Id">
+
+      <button (click)="findUser()" class="btn btn-secondary">Find</button>
+
+    </div>
+
+
+    <!-- set up an ng if IF the user is found, display all info -->
+
+
+    <!-- display a client message if something goes wrong-->
+
+  </div>
+</div>
