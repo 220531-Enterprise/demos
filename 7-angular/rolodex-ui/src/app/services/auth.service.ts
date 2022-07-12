@@ -27,7 +27,7 @@ export class AuthService {
     const payload = {username, password} // (claims)
 
     // return the this.http.post method
-    return this.http.post<any>(this.loginUrl, payload, this.httpOptions)
+    return this.http.post<any>(this.loginUrl, payload, { observe: 'response' })
     // replace this.httpOptions with { observe: 'response' }
     // alternatively add .pipe() to return any errors
 

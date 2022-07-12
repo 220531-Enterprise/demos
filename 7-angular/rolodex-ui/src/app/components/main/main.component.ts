@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-main',
@@ -9,5 +10,7 @@ export class MainComponent  {
 
   title = 'Rolodex UI'
   image = "assets/network.png";
+
+  constructor(public appComponent: AppComponent) {}
 
 }

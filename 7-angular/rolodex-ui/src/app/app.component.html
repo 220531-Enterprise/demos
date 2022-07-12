@@ -1,8 +1,12 @@
-<app-nav></app-nav>
+<!-- only show the nav bar if the user is logged in-->
+<app-nav *ngIf="isLoggedIn"></app-nav>
+
+<!-- We need a way of displaying the login template-->
+<app-home *ngIf="!isLoggedIn"></app-home>
 
 <!-- The router outlet will display the component that is correlated
   with the URL path -->
-<div class="container">
+<div class="container" *ngIf="isLoggedIn">
   <div class="card border-0 my-auto w-100">
     <div class="shadow-lg">
 
@@ -10,4 +14,7 @@
 
     </div>
   </div>
+
+  <button (click)="signOut()" class="btn btn-secondary">Logout</button>
+
 </div>
