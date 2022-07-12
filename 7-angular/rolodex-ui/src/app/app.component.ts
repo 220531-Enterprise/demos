@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Rolodex UI';
-  isLoggedIn: boolean = true;
+
+  // make it public so other components (like our login component can toggle this property)
+  public isLoggedIn: boolean = false;
 }
