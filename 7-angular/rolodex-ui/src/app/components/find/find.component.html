@@ -21,9 +21,21 @@
 
 
     <!-- set up an ng if IF the user is found, display all info -->
+    <!-- Does the user have an id > 0 -->
+    <ul *ngIf="this.user.id" id="user-info">
 
+      <li class="list-group-item">Id: {{user.id}}</li>
+      <li class="list-group-item">First Name {{user.firstName}}</li>
+      <li class="list-group-item">Last Name {{user.lastName}}</li>
+      <li class="list-group-item">Username {{user.username}}</li>
+      <li class="list-group-item">Email {{user.email}}</li>
+
+    </ul>
 
     <!-- display a client message if something goes wrong-->
-
+    <!-- if the length of the message is > 0, interpolate the message-->
+    <div *ngIf="clientMessage.message.length" class="alert alert-danger" role="alert">
+      {{clientMessage.message}}
+    </div>
   </div>
 </div>

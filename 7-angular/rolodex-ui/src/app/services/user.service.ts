@@ -10,12 +10,13 @@ import { User } from '../models/user';
 // WHERE am I making the requests
 
 // http://localhost:5000/api/users
-const userUrl = url + `/users`;
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  userUrl: string =  url + `/users`;
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
@@ -25,18 +26,26 @@ export class UserService {
 
   // any method that invokes this, must subscribe to the return value
   findAllUsers(): Observable<User[]> {
-
-    return this.http.get<User[]>(userUrl, this.httpOptions)
+    return this.http.get<User[]>(this.userUrl, this.httpOptions)
       .pipe(catchError(this.handleError));
+  }
 
+  findUserById(id: number): Observable<User> {
+    // http://localhost:5000/api/users/3
+    return this.http.get<User>(`${this.userUrl}/${id}`, this.httpOptions)
+     .pipe(catchError(this.handleError));
+  }
+
+  deleteUserById(id: number): Observable<any> {
+    // http://localhost:5000/api/users/3
+    return this.http.delete(`${this.userUrl}/${id}`, this.httpOptions)
+     .pipe(catchError(this.handleError));
   }
 
   registerUser(user: User): Observable<User> {
-
     // 3 params: url, request body, options (headers)
-    return this.http.post<User>(`${userUrl}/add`, user, this.httpOptions)
+    return this.http.post<User>(`${this.userUrl}/add`, user, this.httpOptions)
       .pipe(catchError(this.handleError));
-
   }
 
 

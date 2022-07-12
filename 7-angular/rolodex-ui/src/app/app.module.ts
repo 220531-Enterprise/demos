@@ -12,6 +12,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { FindComponent } from './components/find/find.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { HomeComponent } from './components/home/home.component';
     AllComponent,
     RegisterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    FindComponent,
   ],
   imports: [
     BrowserModule,
