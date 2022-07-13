@@ -22,7 +22,7 @@ phases:
   install:
     runtime-versions:
         # We need node to install all the dependencies and built the distributable artifact
-        nodejs: 12
+        nodejs: 14.5
     commands:
         - echo Installing source NPM dependencies...
         - npm install
