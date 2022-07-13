@@ -1,11 +1,17 @@
 # Running Multiple Containers on the Same Server
 The following is a docker-compose.yml file which will run 2 containers at the same time:
 
+<br>
+
 1. An Angular App running on `http://<ip-address>:80`
 2. A Spring Boot API running on `http://<ip-address>:5000/api`
 
+<br>
+
 Create a `docker-compose.yml` on either an EC2 or on your localhost:
 *Make sure that the **Angular App's `environment.prod.ts` file contains the correct URL to the server where you're deploying these apps***
+
+<br>
 
 ```yml
 version: "3.8"
