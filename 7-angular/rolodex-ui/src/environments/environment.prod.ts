@@ -2,4 +2,5 @@ export const environment = {
   production: true
 };
 
-export const url = `http://localhost:5000/api`;
+// this points to the deployed backend
+export const url = `http://rolodexapi-env.eba-smpm5tv2.us-east-1.elasticbeanstalk.com/api`;
