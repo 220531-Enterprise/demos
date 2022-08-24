@@ -32,5 +32,15 @@ export class PokemonComponent {
 
   }
 
+  addPokemonToUser() {
+
+    // grab the user who's currently logged in
+
+    // then use the UserService that's injected into this component to persist the pokemon to the users controller
+
+    // update the table to associate the user with this pokemon
+
+  }
+
 
 }
