@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'Rolodex UI';
 
   // make it public so other components (like our login component can toggle this property)
-  public isLoggedIn: boolean = false;
+  public isLoggedIn: boolean = true; //false
 
   username: string = '';
 

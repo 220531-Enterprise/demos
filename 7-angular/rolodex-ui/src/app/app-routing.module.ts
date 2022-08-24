@@ -1,3 +1,4 @@
+import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { AllComponent } from './components/all/all.component';
 import { MainComponent } from './components/main/main.component';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path: 'all', component:AllComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'find', component:FindComponent},
+  {path: 'pokemon', component:PokemonComponent},
    // a WildCard Route is used to handle unknown paths (ALWAYS goes last)
   {path: '**', component:MainComponent}
 ];

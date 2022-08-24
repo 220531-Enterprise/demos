@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { FindComponent } from './components/find/find.component';
+import { PokemonComponent } from './components/pokemon/pokemon.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { FindComponent } from './components/find/find.component';
     LoginComponent,
     HomeComponent,
     FindComponent,
+    PokemonComponent,
   ],
   imports: [
     BrowserModule,

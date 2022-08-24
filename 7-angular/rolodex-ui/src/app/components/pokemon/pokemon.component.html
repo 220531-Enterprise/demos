@@ -1,0 +1,43 @@
+<div>
+
+  <div>
+    <h2 class="card-header text-center">{{title}}</h2>
+  </div>
+
+  <div class="card-body text-center">
+
+    <h5 class="card-title">Enter the ID of the Pokemon you want to catch:</h5>
+
+    <!-- Input area for the user to type an ID-->
+    <div class="input-group flex-nowrap">
+
+      <span class="input-group-text" id="addonn-wrapping">Id</span>
+
+      <input [(ngModel)]="pokeId" name="userId" type="number" class="form-control" placeholder="Enter Pokemon Id">
+
+      <button (click)="catchPokemonById()" class="btn btn-secondary">Catch</button>
+
+    </div>
+
+
+    <!-- set up an ng if IF the user is found, display all info -->
+    <!-- Does the user have an id > 0 -->
+    <div class="card-body" *ngIf="this.pokemon.id" id="poke-info">
+
+      <img [src]="this.pokemon.sprite" alt="pokemon" width="200">
+
+      <br>
+
+      <div class="alert alert-success">
+        <p>Congrats! You caught {{this.pokemon.pokeName}}</p>
+      </div>
+
+    </div>
+
+    <!-- display a client message if something goes wrong-->
+    <!-- if the length of the message is > 0, interpolate the message-->
+    <div *ngIf="clientMessage.message.length" class="alert alert-danger" role="alert">
+      {{clientMessage.message}}
+    </div>
+  </div>
+</div>

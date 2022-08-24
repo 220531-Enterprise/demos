@@ -23,11 +23,13 @@ export class RegisterComponent {
     this.user.addresses.push(this.address);
 
     this.userService.registerUser(this.user)
-    .subscribe(
-      data => this.clientMessage.message = `Successfully Registered ${data.firstName}`,
-      error => this.clientMessage.message = `Something went wrong.  Error ${error}`
-    )
-  }
+    .subscribe({
+      next: (data) => {
+        this.clientMessage.message = `Successfully Registered ${data.firstName}`;
+      },
+      error: (error) => this.clientMessage.message = `Something went wrong.  Error ${error}`,
 
-
+      complete: () => console.log('complete')
+      })
+    }
 }
