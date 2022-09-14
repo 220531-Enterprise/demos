@@ -7,6 +7,6 @@ Currently the user is able to run `Driver`and it opens up a simple console-drive
 
 Below is a diagram of the Game Map:
 
-<img src="img/image.png" width="800px">
+<img src="https://raw.githubusercontent.com/sophiagavrila/adventure-game/main/img/image.png" width="800px">
 
 <br>
