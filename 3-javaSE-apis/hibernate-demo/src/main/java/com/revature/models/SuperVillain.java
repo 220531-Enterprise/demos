@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="supervillains")
-public class SuperVillain { // if we didn't give it a name, it would just create the table with the name of the class
+public class SuperVillain {
 	
 	@Id // PK
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -28,7 +28,7 @@ public class SuperVillain { // if we didn't give it a name, it would just create
 	
 	private String superpower;
 	
-	private double bounty; // Hibernate will automatically make this a NUMEIRC column
+	private double bounty; // Hibernate will automatically make this a NUMERIC column
 	
 	// List of Crimes that they've commit - ManyToMany
 	// This relationship will be best described by a Joins table - we want hibernate to make the joins table for us
