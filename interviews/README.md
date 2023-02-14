@@ -13,5 +13,5 @@ Within this directory you will find some prep material for client interviews bas
 
 - [How to Do Well in QC](https://github.com/220531-Enterprise/demos/blob/main/interviews/how-to-do-well-in-qc.md)
 
-- Go [here](https://github.com/220531-Enterprise/demos/blob/main/interviews/Enterprise_Cumulative_Review_Questions.docx) 👈 for a list of Fullstack Cumulative Questions for your final QC on the week of 07/18 (they also help for interview prep).
+- Go [here](https://github.com/220531-Enterprise/demos/blob/main/interviews/Cumulative_Review_Questions.docx) 👈 for a list of Fullstack Cumulative Questions for your final QC on the week of 07/18 (they also help for interview prep).
   > *Click `View Raw` to download the .docx file*
